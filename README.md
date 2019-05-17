@@ -1,5 +1,5 @@
-# [Stanford Module Example](https://github.com/SU-SWS/jumpstart_ui)
-##### Version: 8.x-2.x
+# [Jumpstart UI](https://github.com/SU-SWS/jumpstart_ui)
+##### Version: 8.x-1.x
 
 Maintainers: [Mike Decker](https://github.com/pookmish), [sherakama](https://github.com/sherakama)  
 
@@ -8,9 +8,16 @@ Changelog: [Changelog.txt](CHANGELOG.txt)
 Description
 ---
 
-The Stanford Module Example module is used to do some things. Please put a
-description of what this module does so that a new developer can get a quick
-understanding about what this module does.
+This module provides UI tools for developers and tight integration with the Decanter Design System.
+
+Included are:
+
+### Components (ui_patterns + components)
+- See: http://decanter.stanford.edu/section-components.html
+
+### Layouts (layout plugin)
+- See: http://decanter.stanford.edu/section-layout.html
+
 
 Accessibility
 ---
