@@ -1,0 +1,10 @@
+{
+  "name": "su-sws/jumpstart_ui",
+  "description": "Stanford Module Example",
+  "type": "drupal-custom-module",
+  "homepage": "https://github.com/SU-SWS/jumpstart_ui",
+  "authors": [],
+  "license": "GPL-2.0+",
+  "minimum-stability": "dev",
+  "require": {}
+}
