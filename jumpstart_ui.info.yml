@@ -4,5 +4,13 @@ description: 'Does some stuff'
 core: 8.x
 package: Stanford
 version: 8.x-1.0-dev
-# dependencies:
-#   - layout_plugin
+dependencies:
+  - ui_patterns
+  - ui_patterns_layouts
+  - ui_patterns_library
+  - components
+
+component-libraries:
+  decanter:
+    paths:
+      - dist/templates/decanter

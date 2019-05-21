@@ -199,18 +199,18 @@ var webpackConfig = {
       onStart: {
         delete: [distDir]
       },
-      // onEnd: {
-        // copy: [
-          // {
-          //   source: npmPackage + "/decanter/core/src/templates/**/*.twig",
-          //   destination: distDir + "/templates/decanter/"
-          // },
-          // {
-          //   source: srcDir + "/assets/**/*",
-          //   destination: distDir + "/assets/"
-          // }
-        // ],
-      // },
+      onEnd: {
+        copy: [
+          {
+            source: npmPackage + "/decanter/core/src/templates/**/*.twig",
+            destination: distDir + "/templates/decanter/"
+          },
+          {
+            source: srcDir + "/assets/**/*",
+            destination: distDir + "/assets/"
+          }
+        ],
+      },
     }),
     // Add a plugin to watch other files other than that required by webpack.
     // https://www.npmjs.com/package/filewatcher-webpack-plugin

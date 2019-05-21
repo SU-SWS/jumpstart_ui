@@ -1,0 +1,10 @@
+{% set attributes = attributes.addClass('layout layout-robot') %}
+{%
+  include "@decanter/layout/grid/three-column/robot/robot.twig" with
+  {
+    'header': content.header,
+    'first': content.first,
+    'second': content.second,
+    'third': content.third,
+  }
+%}

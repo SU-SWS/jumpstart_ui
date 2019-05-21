@@ -87,9 +87,9 @@
 /******/ ({
 
 /***/ "./lib/js/jumpstart_ui.behavior.js":
-/*!****************************************************!*\
+/*!*****************************************!*\
   !*** ./lib/js/jumpstart_ui.behavior.js ***!
-  \****************************************************/
+  \*****************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -113,9 +113,9 @@ window.Drupal.behaviors.jumpstart_ui = {
 /***/ }),
 
 /***/ "./lib/js/jumpstart_ui.js":
-/*!*******************************************!*\
+/*!********************************!*\
   !*** ./lib/js/jumpstart_ui.js ***!
-  \*******************************************/
+  \********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -132,9 +132,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ "./lib/scss/jumpstart_ui.scss":
-/*!***********************************************!*\
+/*!************************************!*\
   !*** ./lib/scss/jumpstart_ui.scss ***!
-  \***********************************************/
+  \************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
