@@ -1,6 +1,6 @@
-name: 'Stanford Module Example'
+name: 'Jumpstart UI'
 type: module
-description: 'Does some stuff'
+description: 'Provides UI Tools for Jumpstart Projects'
 core: 8.x
 package: Stanford
 version: 8.x-1.0-dev
