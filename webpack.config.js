@@ -47,6 +47,19 @@ var webpackConfig = {
   // What build?
   entry: {
     "jumpstart_ui": path.resolve(__dirname, srcJS + "/jumpstart_ui.js"),
+    "jumpstart_ui.base": path.resolve(__dirname, srcSass + "/jumpstart_ui.base.scss"),
+    "jumpstart_ui.layout": path.resolve(__dirname, srcSass + "/jumpstart_ui.layout.scss"),
+    "alert": path.resolve(__dirname, srcSass + "/components/alert.component.scss"),
+    "brand-bar": path.resolve(__dirname, srcSass + "/components/brand-bar.component.scss"),
+    "button": path.resolve(__dirname, srcSass + "/components/button.component.scss"),
+    "card": path.resolve(__dirname, srcSass + "/components/card.component.scss"),
+    "cta": path.resolve(__dirname, srcSass + "/components/cta.component.scss"),
+    "global-footer": path.resolve(__dirname, srcSass + "/components/global-footer.component.scss"),
+    "hero": path.resolve(__dirname, srcSass + "/components/hero.component.scss"),
+    "link": path.resolve(__dirname, srcSass + "/components/link.component.scss"),
+    "lockup": path.resolve(__dirname, srcSass + "/components/lockup.component.scss"),
+    "logo": path.resolve(__dirname, srcSass + "/components/logo.component.scss"),
+    "quote": path.resolve(__dirname, srcSass + "/components/quote.component.scss"),
   },
   // Where put build?
   output: {

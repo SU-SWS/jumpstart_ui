@@ -33,3 +33,8 @@ link:
       description: "The plain text uri for the anchor tag"
       preview: "https://stanford.edu/"
   use: "@decanter/components/link/link.twig"
+  libraries:
+    - link:
+       css:
+         component:
+           ../../../dist/css/link.css: {}

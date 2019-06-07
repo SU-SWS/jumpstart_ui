@@ -33,3 +33,8 @@ alert:
       description: "The body of the alert message."
       preview: "This message was brought to you by the good people at Stanford Web Services."
   use: "@decanter/components/alert/alert.twig"
+  libraries:
+    - alert:
+       css:
+         component:
+           ../../../dist/css/alert.css: {}

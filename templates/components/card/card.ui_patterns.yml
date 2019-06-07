@@ -56,3 +56,8 @@ card:
       description: "The text label of the button component"
       preview: "Button Label"
   use: "@decanter/components/card/card.twig"
+  libraries:
+    - card:
+       css:
+         component:
+           ../../../dist/css/card.css: {}

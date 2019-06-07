@@ -28,3 +28,8 @@ quote:
       description: "The alt text html property"
       preview: "This is the image alt text field"
   use: "@decanter/components/quote/quote.twig"
+  libraries:
+    - quote:
+       css:
+         component:
+           ../../../dist/css/quote.css: {}

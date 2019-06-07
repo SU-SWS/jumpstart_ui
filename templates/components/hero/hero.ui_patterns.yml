@@ -61,3 +61,8 @@ hero:
       description: "The text label of the button component."
       preview: "Button Label"
   use: "@decanter/components/hero/hero.twig"
+  libraries:
+    - hero:
+       css:
+         component:
+           ../../../dist/css/hero.css: {}

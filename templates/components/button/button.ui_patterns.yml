@@ -38,3 +38,8 @@ button:
       description: "The button type. Eg: submit | button | reset."
       preview: "submit."
   use: "@decanter/components/button/button.twig"
+  libraries:
+    - button:
+       css:
+         component:
+           ../../../dist/css/button.css: {}

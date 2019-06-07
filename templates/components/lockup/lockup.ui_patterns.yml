@@ -114,3 +114,8 @@ lockup:
       description: "Line 5 of the unit/site name text (at the bottom part of the lockup)."
       preview: "Line 5 of the unit/site name text "
   use: "@decanter/components/lockup/lockup.twig"
+  libraries:
+    - lockup:
+       css:
+         component:
+           ../../../dist/css/lockup.css: {}

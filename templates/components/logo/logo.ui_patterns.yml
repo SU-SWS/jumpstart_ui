@@ -13,3 +13,8 @@ logo:
       description: "The text for the ligature logo - either Stanford<br>University or Stanford."
       preview: "Stanford</br>University"
   use: "@decanter/components/logo/logo.twig"
+  libraries:
+    - logo:
+       css:
+         component:
+           ../../../dist/css/logo.css: {}

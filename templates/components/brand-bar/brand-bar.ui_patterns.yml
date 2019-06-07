@@ -18,3 +18,8 @@ brandbar:
       description: "Cardinal red wordmark on white background"
       modifier_class: su-brand-bar--white
   use: "@decanter/components/brand-bar/brand-bar.twig"
+  libraries:
+    - brandbar:
+       css:
+         component:
+           ../../../dist/css/brand-bar.css: {}

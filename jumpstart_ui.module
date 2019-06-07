@@ -20,7 +20,12 @@ function jumpstart_ui_page_attachments(array &$page) {
   // library only where it is needed.
   // See: https://www.drupal.org/node/2274843
 
-  // $page['#attached']['library'][] = 'jumpstart_ui/jumpstart_ui';
+  // Only add on non-admin pages.
+  if (\Drupal::service('router.admin_context')->isAdminRoute() == FALSE) {
+    $page['#attached']['library'][] = 'jumpstart_ui/base';
+    $page['#attached']['library'][] = 'jumpstart_ui/layout';
+    $page['#attached']['library'][] = 'jumpstart_ui/jumpstart_ui';
+  }
 
 }
 

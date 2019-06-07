@@ -49,3 +49,8 @@ cta:
       description: "The alt text html property"
       preview: "This is the icon alt text field"
   use: "@decanter/components/cta/cta.twig"
+  libraries:
+    - cta:
+       css:
+         component:
+           ../../../dist/css/cta.css: {}

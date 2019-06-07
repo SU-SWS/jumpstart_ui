@@ -40,13 +40,26 @@
 # font properties, etc. Ideally, these should be separated enough from a
 # component’s structure to be “swappable”, and omitting these entirely should
 # not break the component’s functionality or basic usability.
-#
-# EXAMPLE:
-#
+
+# Low level core styling. Decanter base element stuff.
+base:
+  version: VERSION
+  css:
+    base:
+      dist/css/jumpstart_ui.base.css: {}
+  js:
+    dist/js/jumpstart_ui.base.js: {}
+
+layout:
+  version: VERSION
+  css:
+    base:
+      dist/css/jumpstart_ui.layout.css: {}
+
 jumpstart_ui:
   version: VERSION
   css:
-    component:
+    base:
       dist/css/jumpstart_ui.css: {}
   js:
     dist/js/jumpstart_ui.js: {}

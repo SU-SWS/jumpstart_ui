@@ -9,6 +9,7 @@ dependencies:
   - ui_patterns_layouts
   - ui_patterns_library
   - components
+  - breakpoint
 
 component-libraries:
   decanter:
