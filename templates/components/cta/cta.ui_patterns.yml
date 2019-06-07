@@ -42,7 +42,7 @@ cta:
       type: text
       label: "Icon Source"
       description: "The uri path to the icon image"
-      preview: "https://decanter.stanford.edu/img/info.svg"
+      preview: "https://decanter.stanford.edu/kss-assets/alert-info.svg"
     icon_alt:
       type: text
       label: "Icon alt text"
