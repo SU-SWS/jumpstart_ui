@@ -1,6 +1,6 @@
 <?php
 
-namespace My\Example\Project\Tests;
+namespace Drupal\Tests\jumpstart_ui\Unit;
 
 use Drupal\Tests\UnitTestCase;
 
