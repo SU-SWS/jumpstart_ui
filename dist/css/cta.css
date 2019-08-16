@@ -2,20 +2,20 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-family: "Source Sans Pro", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
   cursor: pointer;
   display: inline-block;
   border: 0;
   font-size: 2rem;
+  font-weight: 400;
   line-height: 1;
-  outline: none;
   text-align: center;
   text-decoration: none;
   width: 100%;
-  -webkit-transition: background-color .25s ease-in-out, color .25s ease-in-out;
-  transition: background-color .25s ease-in-out, color .25s ease-in-out; }
+  -webkit-transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out;
+  transition: background-color 0.25s ease-in-out, color 0.25s ease-in-out; }
+  .su-cta .su-cta__button a {
+    font-weight: 400;
+    text-decoration: none; }
   @media only screen and (min-width: 576px) {
     .su-cta .su-cta__button {
       width: auto; } }
@@ -33,26 +33,30 @@
       -ms-flex-direction: column;
           flex-direction: column;
   overflow: hidden;
-  line-height: 0; }
+  line-height: 0;
+  text-decoration: none; }
   .su-cta .su-cta__img {
     width: 100%;
     min-height: 1px;
     z-index: 0;
-    -webkit-transition: all .3s ease-out;
-    transition: all .3s ease-out; }
+    -webkit-transition: -webkit-transform 0.3s ease-out;
+    transition: -webkit-transform 0.3s ease-out;
+    transition: transform 0.3s ease-out;
+    transition: transform 0.3s ease-out, -webkit-transform 0.3s ease-out; }
   .su-cta .su-cta__button {
-    padding: 1.5rem 3rem 1.8rem;
-    font-size: 1.5625em;
+    padding: 1rem 2rem 1.15rem;
     background-color: #b1040e;
     color: #ffffff;
+    font-size: 1.5625em;
+    padding: 1.5rem 3rem 1.8rem;
+    margin-bottom: 0;
     font-weight: 400; }
-    .su-cta .su-cta__button:hover {
+    .su-cta .su-cta__button:hover, .su-cta .su-cta__button:focus {
       background-color: #2e2d29;
       color: #ffffff; }
     .su-cta .su-cta__button:focus {
       -webkit-box-shadow: 0 0 3px #4d4f53, 0 0 7px #4d4f53;
-              box-shadow: 0 0 3px #4d4f53, 0 0 7px #4d4f53;
-      background-color: #2e2d29; }
+              box-shadow: 0 0 3px #4d4f53, 0 0 7px #4d4f53; }
     @media only screen and (min-width: 0) {
       .su-cta .su-cta__button {
         width: 100%;

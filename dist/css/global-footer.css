@@ -15,8 +15,9 @@
       padding-bottom: 2.74444436rem; } }
   .su-global-footer a {
     color: rgba(255, 255, 255, 0.9);
-    text-decoration: none; }
-    .su-global-footer a:hover {
+    text-decoration: none;
+    font-weight: 400; }
+    .su-global-footer a:hover, .su-global-footer a:focus {
       color: #ffffff;
       text-decoration: underline; }
   .su-global-footer .su-global-footer__container {
@@ -70,7 +71,7 @@
       font-variant: normal;
       text-transform: none;
       text-decoration: none;
-      line-height: .75;
+      line-height: 0.75;
       -webkit-transform: translateZ(0);
       transform: translateZ(0);
       letter-spacing: 0;
@@ -153,6 +154,8 @@
   .su-global-footer .su-global-footer__menu--policy {
     font-size: 1.5rem;
     font-weight: 300; }
+    .su-global-footer .su-global-footer__menu--policy a {
+      font-weight: 300; }
     @media only screen and (min-width: 0) and (max-width: 575px) {
       .su-global-footer .su-global-footer__menu--policy {
         padding-left: 2rem;
