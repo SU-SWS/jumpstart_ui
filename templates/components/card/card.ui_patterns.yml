@@ -5,6 +5,10 @@ card:
     default:
       label: Default
       description: "Default"
+    linked:
+      label: "Vertical wrapped in link"
+      description: "Like default but, the whole card is wrapped in a link"
+      modifier_class: "su-card--link"
     postcard:
       label: Postcard
       description: "Horizontal postcard type card"
@@ -30,7 +34,7 @@ card:
       label: "Body"
       description: "An open variable for anything. Generally this would be for WYSIWYG editor contents"
       preview: "<p>Sample text goes here and this card should be able to handle a few lines.</p>"
-    card_cta_link:
+    card_link:
       type: text
       label: "Link URL"
       description: "A plain text string of just the URL"
@@ -45,11 +49,6 @@ card:
       label: "Link Label"
       description: "The clickable text for the CTA link"
       preview: "CTA Link Label"
-    card_button_link:
-      type: text
-      label: "Button Link"
-      description: "The href property of the button component"
-      preview: "https://stanford.edu"
     card_button_label:
       type: text
       label: "Button Label"
