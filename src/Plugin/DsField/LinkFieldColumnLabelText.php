@@ -19,22 +19,15 @@ class LinkFieldColumnLabelText extends DsFieldBase {
   public function build() {
     $entity = $this->entity();
     $config = $this->getConfiguration();
-    $field_name = $config['field']['field_name'] ?? "su_card_cta_link";
+    $field_name = $config['field']['field_name'];
     $delta = $config['field']['delta'] ?? 0;
 
     $values = $entity->get($field_name)->get($delta)->getValue();
-    $label = $values['label'] ?? "";
+    $label = $values['title'] ?? "";
 
     return [
       "#plain_text" => $label,
     ];
-  }
-
-  /**
-   * {@inheritdoc}
-   */
-  public function getTitle() {
-    return $this->configuration['field']['title'] . ": Label";
   }
 
 }

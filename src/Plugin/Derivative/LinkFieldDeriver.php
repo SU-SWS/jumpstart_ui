@@ -83,7 +83,7 @@ class LinkFieldDeriver extends DeriverBase implements ContainerDeriverInterface 
           $this->derivatives[$id] = $base_plugin_definition;
           $this->derivatives[$id] += [
             'provider' => 'jumpstart_ui',
-            'title' => $field_info->label(),
+            'title' => $field_info->label() . $this->getSuffix(),
             'entity_type' => $entity_type,
             'ui_limit' => [$bundle_name . "|*"],
             'field_name' => $field_name,
@@ -93,6 +93,24 @@ class LinkFieldDeriver extends DeriverBase implements ContainerDeriverInterface 
     }
 
     return $this->derivatives;
+  }
+
+  /**
+   * Returns a string suffix for the derivative label based on the calling
+   * plugin.
+   *
+   * @return string
+   *   The suffix string to append to the field name.
+   */
+  private function getSuffix() {
+    $keys = [
+      'jumpstart_ui_link_field_column_label' => ': Label',
+      'jumpstart_ui_link_field_column_uri' => ': URI',
+    ];
+
+    if (array_key_exists($this->basePluginId, $keys)) {
+      return $keys[$this->basePluginId];
+    }
   }
 
 }

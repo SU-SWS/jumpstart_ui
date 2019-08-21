@@ -36,12 +36,4 @@ class LinkFieldColumnUriText extends DsFieldBase {
     ];
   }
 
-  /**
-   * {@inheritdoc}
-   */
-  public function getTitle() {
-    return $this->configuration['field']['title'] . ": URI";
-  }
-
-
 }
