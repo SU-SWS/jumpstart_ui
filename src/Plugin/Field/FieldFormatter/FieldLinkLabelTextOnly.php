@@ -11,21 +11,21 @@ use Drupal\Core\Field\FormatterBase;
  * Provides the field link formatter.
  *
  * @FieldFormatter(
- *   id = "field_link_url_text_only",
- *   label = @Translation("URL only as text"),
+ *   id = "field_link_label_text_only",
+ *   label = @Translation("Label only as text"),
  *   field_types = {
  *     "link"
  *   },
  * )
  */
-class FieldLinkURLTextOnly extends FormatterBase {
+class FieldLinkLabelTextOnly extends FormatterBase {
 
   /**
    * {@inheritdoc}
    */
   public function settingsSummary() {
     $summary = [];
-    $summary[] = $this->t('Renders the URL as plain text.');
+    $summary[] = $this->t('Renders the Label as plain text.');
     return $summary;
   }
 
@@ -35,9 +35,10 @@ class FieldLinkURLTextOnly extends FormatterBase {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $element = [];
     foreach ($items as $delta => $item) {
-      $url = $item->getUrl()->toString();
+      $vals = $item->getValue();
+      $title = $vals['title'] ?? "";
       // Render each element as plain_text.
-      $element[$delta] = ['#plain_text' => $url];
+      $element[$delta] = ['#plain_text' => $title];
     }
     return $element;
   }
