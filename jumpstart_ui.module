@@ -67,8 +67,3 @@ function jumpstart_ui_preprocess_patterns_overview_page(&$variables) {
     return strcmp($pattern_a['label'], $pattern_b['label']);
   });
 }
-
-
-function jumpstart_ui_form_entity_view_display_edit_form_alter(&$form, FormStateInterface $form_state) {
-  var_dump("I IS HERE.");
-}
