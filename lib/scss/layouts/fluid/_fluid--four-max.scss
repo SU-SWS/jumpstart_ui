@@ -5,8 +5,28 @@
   // Default up.
   > :first-child {
     @include flex-container;
+    justify-content: center;
+
+    @include grid-media('sm') {
+      justify-content: space-around;
+    }
+
     > * {
       display: flex;
+      @include margin(null null $gutter-xs);
+
+      @include grid-media('sm') {
+        @include margin(null null $gutter-sm);
+      }
+      @include grid-media('lg') {
+        @include margin(null null $gutter-lg);
+      }
+      @include grid-media('xl') {
+        @include margin(null null $gutter-xl);
+      }
+      @include grid-media('2xl') {
+        @include margin(null null $gutter-2xl);
+      }
     }
   }
 
@@ -14,8 +34,7 @@
   &[data-cols="1"] {
     > :first-child {
       > * {
-        @include responsive-flex-column(1 of 1);
-        flex-basis: 100%;
+        @include responsive-flex-column(8 of 12);
       }
     }
   }
@@ -24,22 +43,22 @@
   &[data-cols="2"] {
     > :first-child {
       > * {
-        @include responsive-flex-column(1 of 1);
+        @include responsive-flex-column(8 of 12);
 
         @include grid-media('md') {
-          @include flex-column(1 of 2, $gutter-md);
+          @include flex-column(5 of 12, $gutter-md);
         }
 
         @include grid-media('lg') {
-          @include flex-column(1 of 2, $gutter-lg);
+          @include flex-column(5 of 12, $gutter-lg);
         }
 
         @include grid-media('xl') {
-          @include flex-column(1 of 2, $gutter-xl);
+          @include flex-column(5 of 12, $gutter-xl);
         }
 
         @include grid-media('2xl') {
-          @include flex-column(1 of 2, $gutter-2xl);
+          @include flex-column(5 of 12, $gutter-2xl);
         }
       }
     }
@@ -49,22 +68,22 @@
   &[data-cols="3"] {
     > :first-child {
       > * {
-        @include responsive-flex-column(1 of 1);
+        @include responsive-flex-column(8 of 12);
 
         @include grid-media('md') {
-          @include flex-column(1 of 2, $gutter-md);
+          @include flex-column(5 of 12, $gutter-md);
         }
 
         @include grid-media('lg') {
-          @include flex-column(1 of 3, $gutter-lg);
+          @include flex-column(5 of 12, $gutter-lg);
         }
 
         @include grid-media('xl') {
-          @include flex-column(1 of 3, $gutter-xl);
+          @include flex-column(4 of 12, $gutter-xl);
         }
 
         @include grid-media('2xl') {
-          @include flex-column(1 of 3, $gutter-2xl);
+          @include flex-column(4 of 12, $gutter-2xl);
         }
       }
     }
@@ -74,22 +93,22 @@
   &[data-cols="4"] {
     > :first-child {
       > * {
-        @include responsive-flex-column(1 of 1);
+        @include responsive-flex-column(8 of 12);
 
         @include grid-media('md') {
-          @include flex-column(1 of 2, $gutter-md);
+          @include flex-column(5 of 12, $gutter-md);
         }
 
         @include grid-media('lg') {
-          @include flex-column(1 of 3, $gutter-lg);
+          @include flex-column(4 of 12, $gutter-lg);
         }
 
         @include grid-media('xl') {
-          @include flex-column(1 of 4, $gutter-xl);
+          @include flex-column(3 of 12, $gutter-xl);
         }
 
         @include grid-media('2xl') {
-          @include flex-column(1 of 4, $gutter-2xl);
+          @include flex-column(3 of 12, $gutter-2xl);
         }
       }
     }
