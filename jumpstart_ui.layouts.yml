@@ -568,3 +568,18 @@ layout_basic:
       label: Content
     footer:
       label: Footer
+
+# FLUID LAYOUTS
+layout_fluid_four_max:
+  label: Fluid - Four Max
+  category: 'Fluid'
+  path: templates/layouts/fluid/
+  icon: fluid--four-max.png
+  default_region: items
+  template: fluid--four-max
+  library: jumpstart_ui/fluid--four-max
+  regions:
+    items:
+      label: A list of items
+    per_row:
+      label: Max number of items per row

@@ -1,0 +1,21 @@
+{#
+/**
+ * @file
+ * Molive - Template for a 4 column panel layout.
+ *
+ * This template provides a four column panel display layout, with
+ * each column roughly equal in width.
+ *
+ * Variables:
+ * attributes - html attributes for the template wrapper tag
+ * modifier_class - Variant modifier css classes
+ * items - A list or repeating set of items.
+ * per_row - Configurable set of items per row
+ */
+#}
+{%
+  per_row = per_row|render|striptags
+%}
+<div{{ attributes }} class="layout layout-fluid--four-max {{ modifier_class }}" data-cols="{{ per_row|default(2) }}">
+  {{ items }}
+</div>

@@ -54,7 +54,7 @@ card:
       label: "Button Label"
       description: "The text label of the button component"
       preview: "Button Label"
-  use: "@decanter/components/card/card.twig"
+  use: "@jumpstart_ui/components/card/card.twig"
   libraries:
     - card:
        css:
