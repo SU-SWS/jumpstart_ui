@@ -2,4 +2,97 @@
 
 .layout-fluid--four-max {
 
+  // Default up.
+  > :first-child {
+    @include flex-container;
+    > * {
+      display: flex;
+    }
+  }
+
+  // Max 1 columns all the way down.
+  &[data-cols="1"] {
+    > :first-child {
+      > * {
+        @include responsive-flex-column(1 of 1);
+        flex-basis: 100%;
+      }
+    }
+  }
+
+  // Max 2 columns wide.
+  &[data-cols="2"] {
+    > :first-child {
+      > * {
+        @include responsive-flex-column(1 of 1);
+
+        @include grid-media('md') {
+          @include flex-column(1 of 2, $gutter-md);
+        }
+
+        @include grid-media('lg') {
+          @include flex-column(1 of 2, $gutter-lg);
+        }
+
+        @include grid-media('xl') {
+          @include flex-column(1 of 2, $gutter-xl);
+        }
+
+        @include grid-media('2xl') {
+          @include flex-column(1 of 2, $gutter-2xl);
+        }
+      }
+    }
+  }
+
+  // Max 3 columns wide.
+  &[data-cols="3"] {
+    > :first-child {
+      > * {
+        @include responsive-flex-column(1 of 1);
+
+        @include grid-media('md') {
+          @include flex-column(1 of 2, $gutter-md);
+        }
+
+        @include grid-media('lg') {
+          @include flex-column(1 of 3, $gutter-lg);
+        }
+
+        @include grid-media('xl') {
+          @include flex-column(1 of 3, $gutter-xl);
+        }
+
+        @include grid-media('2xl') {
+          @include flex-column(1 of 3, $gutter-2xl);
+        }
+      }
+    }
+  }
+
+  // Max 4 columns wide.
+  &[data-cols="4"] {
+    > :first-child {
+      > * {
+        @include responsive-flex-column(1 of 1);
+
+        @include grid-media('md') {
+          @include flex-column(1 of 2, $gutter-md);
+        }
+
+        @include grid-media('lg') {
+          @include flex-column(1 of 3, $gutter-lg);
+        }
+
+        @include grid-media('xl') {
+          @include flex-column(1 of 4, $gutter-xl);
+        }
+
+        @include grid-media('2xl') {
+          @include flex-column(1 of 4, $gutter-2xl);
+        }
+      }
+    }
+  }
+
 }

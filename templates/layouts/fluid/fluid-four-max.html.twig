@@ -8,14 +8,12 @@
  *
  * Variables:
  * attributes - html attributes for the template wrapper tag
- * modifier_class - Variant modifier css classes
- * items - A list or repeating set of items.
+ * fluid_items - A list or repeating set of items.
  * per_row - Configurable set of items per row
  */
 #}
-{%
-  per_row = per_row|render|striptags
-%}
-<div{{ attributes }} class="layout layout-fluid--four-max {{ modifier_class }}" data-cols="{{ per_row|default(2) }}">
-  {{ items }}
+{% set per_row = content.per_row|render|striptags|trim|number_format %}
+{% set attributes = attributes.addClass('layout layout-fluid--four-max') %}
+<div{{ attributes }} data-cols="{{ per_row|default(2) }}">
+  {{ content.fluid_items }}
 </div>
