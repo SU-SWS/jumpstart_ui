@@ -37,16 +37,15 @@ class FieldLinkURLTextOnly extends FormatterBase {
     foreach ($items as $delta => $item) {
       $urlObj = $item->getUrl();
 
-      if (is_object($urlObj)) {
-        $url = $urlObj->toString();
-      }
-      else {
-        $url = Url::fromInternalUri("internal:/");
+      if (!is_object($urlObj)) {
+        continue;
       }
 
       // Render each element as plain_text.
+      $url = $urlObj->toString();
       $element[$delta] = ['#plain_text' => $url];
     }
+
     return $element;
   }
 
