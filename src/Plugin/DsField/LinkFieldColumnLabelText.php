@@ -22,13 +22,9 @@ class LinkFieldColumnLabelText extends DsFieldBase {
     $field_name = $config['field']['field_name'];
     $delta = $config['field']['delta'] ?? 0;
 
-    try {
+    if ($entity->get($field_name)->count()) {
       $delta_values = $entity->get($field_name)->get($delta);
       $label = $delta_values ? $delta_values->getValue()['title'] : "";
-    }
-    // Field could be empty and will throw an error.
-    catch(\Exception $e) {
-      $label = "";
     }
 
     return [
