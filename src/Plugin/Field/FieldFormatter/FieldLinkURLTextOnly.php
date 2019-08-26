@@ -5,6 +5,7 @@ namespace Drupal\jumpstart_ui\Plugin\Field\FieldFormatter;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
+use Drupal\Core\Url;
 
 /**
  * Provides the field link formatter.
@@ -34,7 +35,15 @@ class FieldLinkURLTextOnly extends FormatterBase {
   public function viewElements(FieldItemListInterface $items, $langcode) {
     $element = [];
     foreach ($items as $delta => $item) {
-      $url = $item->getUrl()->toString();
+      $urlObj = $item->getUrl();
+
+      if (is_object($urlObj)) {
+        $url = $urlObj->toString();
+      }
+      else {
+        $url = Url::fromInternalUri("internal:/");
+      }
+
       // Render each element as plain_text.
       $element[$delta] = ['#plain_text' => $url];
     }
