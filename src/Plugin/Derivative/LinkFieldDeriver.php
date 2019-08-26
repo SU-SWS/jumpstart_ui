@@ -14,13 +14,6 @@ use Symfony\Component\DependencyInjection\ContainerInterface;
 class LinkFieldDeriver extends DeriverBase implements ContainerDeriverInterface {
 
   /**
-   * Stores all entity row plugin information.
-   *
-   * @var array
-   */
-  protected $derivatives = [];
-
-  /**
    * The base plugin ID that the derivative is for.
    *
    * @var string

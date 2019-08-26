@@ -5,7 +5,6 @@ namespace Drupal\jumpstart_ui\Plugin\Field\FieldFormatter;
 use Drupal\Core\Plugin\ContainerFactoryPluginInterface;
 use Drupal\Core\Field\FieldItemListInterface;
 use Drupal\Core\Field\FormatterBase;
-// use Drupal\link\Plugin\Field\FieldFormatter\LinkFormatter;
 
 /**
  * Provides the field link formatter.

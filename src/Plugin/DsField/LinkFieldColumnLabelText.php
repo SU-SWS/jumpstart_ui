@@ -27,7 +27,7 @@ class LinkFieldColumnLabelText extends DsFieldBase {
       $label = $delta_values ? $delta_values->getValue()['title'] : "";
     }
     // Field could be empty and will throw an error.
-    catch(Exception $e) {
+    catch(\Exception $e) {
       $label = "";
     }
 
