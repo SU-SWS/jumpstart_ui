@@ -5,12 +5,12 @@ core: 8.x
 package: Stanford
 version: 8.x-1.0-dev
 dependencies:
-  - ui_patterns:ui_patterns
-  - ui_patterns_layouts:ui_patterns_layouts
-  - ui_patterns_library:ui_patterns_library
   - components:components
   - drupal:breakpoint
   - ds:ds
+  - ui_patterns:ui_patterns
+  - ui_patterns_layouts:ui_patterns_layouts
+  - ui_patterns_library:ui_patterns_library
 
 component-libraries:
   decanter:

@@ -35,10 +35,7 @@ class LinkFieldDeriver extends DeriverBase implements ContainerDeriverInterface 
    * @param \Drupal\Core\Entity\EntityFieldManagerInterface $entity_field_manager
    *   The entity field manager.
    */
-  public function __construct(
-    $base_plugin_id,
-    EntityFieldManagerInterface $entity_field_manager
-  ) {
+  public function __construct($base_plugin_id, EntityFieldManagerInterface $entity_field_manager) {
     $this->basePluginId = $base_plugin_id;
     $this->entityFieldManager = $entity_field_manager;
   }
@@ -85,7 +82,7 @@ class LinkFieldDeriver extends DeriverBase implements ContainerDeriverInterface 
       }
     }
 
-    return $this->derivatives;
+    return $this->derivatives ;
   }
 
   /**
