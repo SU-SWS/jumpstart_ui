@@ -28,10 +28,8 @@ class LinkFieldColumnLabelText extends DsFieldBase {
     }
     // Field could be empty and will throw an error.
     catch(Exception $e) {
-      $values = [];
+      $label = "";
     }
-
-    $label = $values['title'] ?? "";
 
     return [
       "#plain_text" => $label,

@@ -60,7 +60,7 @@ hero:
       label: "Button Label"
       description: "The text label of the button component."
       preview: "Button Label"
-  use: "@decanter/components/hero/hero.twig"
+  use: "@jumpstart_ui/components/hero/hero.twig"
   libraries:
     - hero:
        css:
