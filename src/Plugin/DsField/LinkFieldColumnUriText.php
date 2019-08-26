@@ -24,10 +24,10 @@ class LinkFieldColumnUriText extends DsFieldBase {
     $delta = $config['field']['delta'] ?? 0;
 
     try {
-      $values = $entity->get($field_name)->get($delta)->getValue();
-      $uri = $values['uri'] ?? "";
+      $delta_values = $entity->get($field_name)->get($delta);
+      $uri = $delta_values ? $delta_values->getValue()['uri'] : "internal:/";;
     }
-    catch(Exception $e) {
+    catch (Exception $e) {
       $uri = "internal:/";
     }
 
