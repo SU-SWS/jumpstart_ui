@@ -82,4 +82,3 @@ workflows:
     jobs:
       - run-coverage
       - run-behat
-

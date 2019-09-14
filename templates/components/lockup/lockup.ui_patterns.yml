@@ -29,7 +29,7 @@ lockup:
     g:
       label: Option G
       description: "Option G"
-      modifier_class: su-lockup--option-G
+      modifier_class: su-lockup--option-g
     h:
       label: Option H
       description: "Option H"

@@ -1,7 +1,11 @@
 @charset 'UTF-8';
 
+// Jumpstart UI Specific Configuration and variable overrides.
 @import 'jumpstart_ui.config';
+@import 'decanter-no-markup';
 
 // Render Decanter Library Base Styles Only.
-@import 'decanter-no-markup';
 @import 'layout/index';
+
+// Jumpstart UI Custom Styles
+@import 'layouts/index';
