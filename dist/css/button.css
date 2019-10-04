@@ -85,6 +85,7 @@ button,
   background-color: #b1040e;
   color: #ffffff;
   font-size: 1.5625em;
+  letter-spacing: -0.012em;
   padding: 1.5rem 3rem 1.8rem; }
   .su-button--big:hover, .su-button--big:focus,
   .su-button--big.su-link:hover,

@@ -3,16 +3,16 @@
   color: #ffffff; }
   @media only screen and (min-width: 0) {
     .su-global-footer {
-      padding-top: 2.31111104rem;
-      padding-bottom: 2.31111104rem; } }
+      padding-top: 2.31rem;
+      padding-bottom: 2.31rem; } }
   @media only screen and (min-width: 768px) {
     .su-global-footer {
-      padding-top: 2.59999992rem;
-      padding-bottom: 2.59999992rem; } }
+      padding-top: 2.6rem;
+      padding-bottom: 2.6rem; } }
   @media only screen and (min-width: 1500px) {
     .su-global-footer {
-      padding-top: 2.74444436rem;
-      padding-bottom: 2.74444436rem; } }
+      padding-top: 2.74rem;
+      padding-bottom: 2.74rem; } }
   .su-global-footer a {
     color: rgba(255, 255, 255, 0.9);
     text-decoration: none;
