@@ -5,7 +5,7 @@
 @import 'decanter-no-markup';
 
 // Render Decanter Library Base Styles Only.
-@import 'layout/index';
+@import '~decanter/scss/layout/index';
 
 // Jumpstart UI Custom Styles
 @import 'layouts/index';

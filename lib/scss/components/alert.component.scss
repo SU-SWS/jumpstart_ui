@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 // This file imports the base styles from decanter so they can be included
 // or removed by a theme.
-$image-path: "~decanter";
+@import '../jumpstart_ui.config';
 @import 'decanter-no-markup';
-@import 'components/alert/index';
+@import '~decanter/scss/components/alert/index';
