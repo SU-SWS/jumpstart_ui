@@ -1,9 +1,8 @@
 {#
  # Sanitize some of the Drupalness in the picky fields.
  #}
-{% set card_cta_label = card_cta_label|render|striptags %}
-{% set card_button_label = card_button_label|render|striptags %}
-{% set card_link = card_link|render|striptags %}
+{%- set card_cta_label = card_cta_label|render|striptags -%}
+{%- set card_link = card_link|render|striptags -%}
 {#
   You are not allowed to have both action and button at the same time so remove the button
 #}
