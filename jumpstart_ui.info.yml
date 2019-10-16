@@ -16,6 +16,3 @@ component-libraries:
   decanter:
     paths:
       - dist/templates/decanter
-  jumpstart_ui:
-    paths:
-      - dist/templates/
