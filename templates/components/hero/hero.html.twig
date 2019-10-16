@@ -26,19 +26,19 @@
 {#
   Sanitize the Drupal
 #}
-{%- if hero_super_headline|render|striptags is empty -%}
+{%- if hero_super_headline|render|striptags('<drupal-render-placeholder>') is empty -%}
   {%- set hero_super_headline = null -%}
 {%- endif -%}
-{%- if hero_headline|render|striptags is empty -%}
+{%- if hero_headline|render|striptags('<drupal-render-placeholder>') is empty -%}
   {%- set hero_headline = null -%}
 {%- endif -%}
-{%- if hero_body|render|striptags is empty -%}
+{%- if hero_body|render|striptags('<drupal-render-placeholder>') is empty -%}
   {%- set hero_body = null -%}
 {%- endif -%}
-{%- if hero_cta_label|render|striptags is empty -%}
+{%- if hero_cta_label|render|striptags('<drupal-render-placeholder>') is empty -%}
   {%- set hero_cta_label = null -%}
 {%- endif -%}
-{%- if hero_button_label|render|striptags is empty -%}
+{%- if hero_button_label|render|striptags('<drupal-render-placeholder>') is empty -%}
   {%- set hero_button_label = null -%}
 {%- endif -%}
 
