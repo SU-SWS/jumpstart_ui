@@ -114,9 +114,7 @@ var webpackConfig = {
             options: {
               sourceMap: true,
               plugins: () => [
-                autoprefixer( {
-                  browsers: ['last 2 versions', 'ie 11']
-                } )
+                autoprefixer()
               ]
             }
           },

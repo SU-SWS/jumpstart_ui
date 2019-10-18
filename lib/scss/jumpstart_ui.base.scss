@@ -4,5 +4,5 @@
 
 // Render Decanter Library Base Styles Only.
 @import 'decanter-no-markup';
-@import 'core/index';
-@import 'elements/index';
+@import '~decanter/scss/core/index';
+@import '~decanter/scss/elements/index';
