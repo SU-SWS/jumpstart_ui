@@ -1,0 +1,55 @@
+{% extends "@decanter/components/local-footer/local-footer.twig" %}
+
+{% set lockup_title = lockup_title|render|striptags|trim %}
+{% set signup_form_method = signup_form_method|render|striptags|trim %}
+{% set signup_form_action = signup_form_action|render|striptags|trim %}
+{% set signup_form_field_submit_value = signup_form_field_submit_value|render|striptags|trim %}
+
+{% block contentcell1 %}
+  {% if address|render|striptags|trim is not empty %}
+    <address class="su-local-footer__address">
+      {{ address }}
+    </address>
+  {% endif %}
+
+  {% if action_links is not empty %}
+    <div class="su-local-footer__action-links">
+      {{ action_links }}
+    </div>
+  {% endif %}
+
+  {% if social_links is not empty %}
+    <div class="su-local-footer__social-links">
+      {{ social_links|render|striptags('<a>')|trim|raw }}
+    </div>
+  {% endif %}
+{% endblock %}
+
+
+{% block contentcell2 %}
+  {% if primary_links is not empty %}
+    <nav aria-label="footer primary nav">
+      {% if primary_links_header is not empty %}
+        <h2 class="su-local-footer__list-heading">
+          {{ primary_links_header|default("Primary Links") }}
+        </h2>
+      {% endif %}
+      <div class="su-local-footer__primary-links">
+        {{ primary_links }}
+      </div>
+    </nav>
+  {% endif %}
+
+  {% if secondary_links is not empty %}
+    <nav aria-label="footer secondary nav">
+      {% if secondary_links_header is not empty %}
+        <h2 class="su-local-footer__list-heading">
+          {{ secondary_links_header|default("Secondary Links") }}
+        </h2>
+      {% endif %}
+      <div class="su-local-footer__secondary-links">
+        {{ secondary_links }}
+      </div>
+    </nav>
+  {% endif %}
+{% endblock %}
