@@ -13,23 +13,23 @@
     }
 
 
-    &[href*="facebook"]:before {
+    &[href*="facebook"]::before {
       content: "\f39e";
     }
 
-    &[href*="instagram"]:before {
+    &[href*="instagram"]::before {
       content: "\f16d";
     }
 
-    &[href*="twitter"]:before {
+    &[href*="twitter"]::before {
       content: "\f099";
     }
 
-    &[href*="youtu"]:before {
+    &[href*="youtu"]::before {
       content: "\f167";
     }
 
-    &[href*="linkedin"]:before {
+    &[href*="linkedin"]::before {
       content: "\f0e1";
     }
   }
