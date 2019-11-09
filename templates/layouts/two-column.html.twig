@@ -1,0 +1,15 @@
+<div{{ attributes.addClass('jumpstart-ui--three-column', 'flex-container', settings.centered, settings.extra_classes) }}>
+
+  {% if content.left|render %}
+    <aside {{ region_attributes.left.addClass('left-region', 'flex-md-3-of-12') }}>
+      {{ content.left }}
+    </aside>
+  {% endif %}
+
+  {% if content.main|render %}
+    <section {{ region_attributes.main.addClass('main-region', content.left|render  ? 'flex-md-9-of-12' : '') }}>
+      {{ content.main }}
+    </section>
+  {% endif %}
+
+</div>
