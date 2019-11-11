@@ -7,7 +7,7 @@ use Drupal\Core\Layout\LayoutDefault;
 use Drupal\Core\Plugin\PluginFormInterface;
 
 /**
- * Class JumpstartUiLayouts
+ * Class JumpstartUiLayouts.
  *
  * @package Drupal\jumpstart_ui
  */
@@ -17,7 +17,7 @@ class JumpstartUiLayouts extends LayoutDefault implements PluginFormInterface {
    * {@inheritDoc}
    */
   public function defaultConfiguration() {
-    return ['extra_classes' => NULL, 'centered' => TRUE,];
+    return ['extra_classes' => NULL, 'centered' => TRUE];
   }
 
   /**
