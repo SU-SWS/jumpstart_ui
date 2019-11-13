@@ -1,12 +1,12 @@
 {% extends "@decanter/components/local-footer/local-footer.twig" %}
 
-{% set lockup_title = lockup_title|render|striptags|trim %}
-{% set signup_form_method = signup_form_method|render|striptags|trim %}
-{% set signup_form_action = signup_form_action|render|striptags|trim %}
-{% set signup_form_field_submit_value = signup_form_field_submit_value|render|striptags|trim %}
+{% set lockup_title = lockup_title|render|striptags('<drupal-render-placeholder>')|trim %}
+{% set signup_form_method = signup_form_method|render|striptags('<drupal-render-placeholder>')|trim %}
+{% set signup_form_action = signup_form_action|render|striptags('<drupal-render-placeholder>')|trim %}
+{% set signup_form_field_submit_value = signup_form_field_submit_value|render|striptags('<drupal-render-placeholder>')|trim %}
 
 {% block contentcell1 %}
-  {% if address|render|striptags|trim is not empty %}
+  {% if address|render|striptags('<drupal-render-placeholder>')|trim is not empty %}
     <address class="su-local-footer__address">
       {{ address }}
     </address>
@@ -20,11 +20,10 @@
 
   {% if social_links is not empty %}
     <div class="su-local-footer__social-links">
-      {{ social_links|render|striptags('<a>')|trim|raw }}
+      {{ social_links|render|striptags('<a> <drupal-render-placeholder>')|trim|raw }}
     </div>
   {% endif %}
 {% endblock %}
-
 
 {% block contentcell2 %}
   {% if primary_links is not empty %}
