@@ -2,8 +2,10 @@
 
 8.x-1.0-alpha2
 --------------------------------------------------------------------------------
-- D8CORE-387 Dynamic layouts: Removed many  layouts in favor of a few 
+- D8CORE-387 Dynamic layouts: Removed all Decanter Grid layouts in favor of a few 
 configurable layouts.
+- Requires Drupal ^8.8
+- Caravan running with latest-drupal now
 
 8.x-1.0-alpha1
 --------------------------------------------------------------------------------  
