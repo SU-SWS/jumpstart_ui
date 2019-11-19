@@ -21,8 +21,8 @@
         content: fa-content($fa-var-facebook-f);
       }
 
-      &::hover::before,
-      &::focus::before {
+      &:hover::before,
+      &:focus::before {
         color: color('Facebook', $su-social-brands);
       }
     }
@@ -32,8 +32,8 @@
         content: fa-content($fa-var-instagram);
       }
 
-      &::hover::before,
-      &::focus::before {
+      &:hover::before,
+      &:focus::before {
         color: color('Instagram', $su-social-brands);
       }
     }
@@ -43,8 +43,8 @@
         content: fa-content($fa-var-twitter);
       }
 
-      &::hover::before,
-      &::focus::before {
+      &:hover::before,
+      &:focus::before {
         color: color('Twitter', $su-social-brands);
       }
     }
@@ -54,8 +54,8 @@
         content: fa-content($fa-var-youtube);
       }
 
-      &::hover::before,
-      &::focus::before {
+      &:hover::before,
+      &:focus::before {
         color: color('YouTube', $su-social-brands);
       }
     }
@@ -65,8 +65,8 @@
         content: fa-content($fa-var-linkedin-in);
       }
 
-      &::hover::before,
-      &::focus::before {
+      &:hover::before,
+      &:focus::before {
         color: color('LinkedIn', $su-social-brands);
       }
     }
