@@ -6,30 +6,69 @@
 
   a {
     font-size: 0;
-    font-family: "Font Awesome 5 Brands";
+    margin: 0 5px;
 
     &::before {
+      @include fa-icon;
+      color: $su-color-black;
+      font-family: 'Font Awesome 5 Brands';
+      transition: color 0.25s ease-out;
       font-size: 1.9rem;
     }
 
-    &[href*="facebook"]::before {
-      content: "\f39e";
+    &[href*="facebook"] {
+      &::before {
+        content: fa-content($fa-var-facebook-f);
+      }
+
+      &:hover:before,
+      &:focus:before {
+        color: color('Facebook', $su-social-brands);
+      }
     }
 
-    &[href*="instagram"]::before {
-      content: "\f16d";
+    &[href*="instagram"] {
+      &::before {
+        content: fa-content($fa-var-instagram);
+      }
+
+      &:hover:before,
+      &:focus:before {
+        color: color('Instagram', $su-social-brands);
+      }
     }
 
-    &[href*="twitter"]::before {
-      content: "\f099";
+    &[href*="twitter"] {
+      &::before {
+        content: fa-content($fa-var-twitter);
+      }
+
+      &:hover:before,
+      &:focus:before {
+        color: color('Twitter', $su-social-brands);
+      }
     }
 
-    &[href*="youtu"]::before {
-      content: "\f167";
+    &[href*="youtu"] {
+      &::before {
+        content: fa-content($fa-var-youtube);
+      }
+
+      &:hover:before,
+      &:focus:before {
+        color: color('YouTube', $su-social-brands);
+      }
     }
 
-    &[href*="linkedin"]::before {
-      content: "\f0e1";
+    &[href*="linkedin"] {
+      &::before {
+        content: fa-content($fa-var-linkedin-in);
+      }
+
+      &:hover:before,
+      &:focus:before {
+        color: color('LinkedIn', $su-social-brands);
+      }
     }
   }
 }
