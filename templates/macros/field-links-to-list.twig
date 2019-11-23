@@ -1,0 +1,20 @@
+{% macro create_list(field, with_ul = {}) %}
+  {% if with_url is not empty %}
+    <ul {{ with_url }}>
+  {% endif %}
+
+  {# find the field name and start looping through the items. #}
+  {% set field_keys = field|keys %}
+  {% set field_info = field[field_keys[0]] %}
+  {% set field_items = field_info["#items"] %}
+
+  {% for item in field_items %}
+    <li {{ list_attributes }}>
+      <a href="{{ item.uri }}" {{ item.options }}>{{ item.title }}</a>
+    </li>
+  {% endfor %}
+
+  {% if with_url is not empty %}
+    </ul>
+  {% endif %}
+{% endmacro %}
