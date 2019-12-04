@@ -57,6 +57,7 @@ var webpackConfig = {
     "global-footer": path.resolve(__dirname, srcSass + "/components/global-footer.component.scss"),
     "hero": path.resolve(__dirname, srcSass + "/components/hero.component.scss"),
     "link": path.resolve(__dirname, srcSass + "/components/link.component.scss"),
+    "local-footer": path.resolve(__dirname, srcSass + "/components/local-footer.component.scss"),
     "lockup": path.resolve(__dirname, srcSass + "/components/lockup.component.scss"),
     "logo": path.resolve(__dirname, srcSass + "/components/logo.component.scss"),
     "quote": path.resolve(__dirname, srcSass + "/components/quote.component.scss"),
