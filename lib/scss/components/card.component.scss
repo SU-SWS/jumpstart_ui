@@ -4,7 +4,8 @@
 @import '~decanter/scss/components/card/index';
 
 .su-card {
-  .media.video {
+  .media {
+    &.video {
     position: relative;
     padding-top: 56.25%;
 
