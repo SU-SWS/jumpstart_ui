@@ -1,5 +1,12 @@
 # Jumpstart UI
 
+8.x-1.0-alpha3
+--------------------------------------------------------------------------------
+_Release Date: 2019-12-05_
+
+- D8CORE-726 Wired up local footer template from Decanter as a pattern.
+- D8CORE-859 Card video styles for media/video 
+
 8.x-1.0-alpha2
 --------------------------------------------------------------------------------
 - D8CORE-387 Dynamic layouts: Removed all Decanter Grid layouts in favor of a few 
