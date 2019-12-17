@@ -63,6 +63,7 @@ var webpackConfig = {
     "local-footer":         path.resolve(__dirname, srcSass + "/components/local-footer.component.scss"),
     "lockup":               path.resolve(__dirname, srcSass + "/components/lockup.component.scss"),
     "logo":                 path.resolve(__dirname, srcSass + "/components/logo.component.scss"),
+    "media":                path.resolve(__dirname, srcSass + "/components/media.component.scss"),
     "quote":                path.resolve(__dirname, srcSass + "/components/quote.component.scss")
   },
   // Where put build?
