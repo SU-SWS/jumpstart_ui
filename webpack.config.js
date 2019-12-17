@@ -9,7 +9,7 @@
 
 const path = require('path');
 const webpack = require('webpack');
-const autoprefixer = require('autoprefixer');
+const autoprefixer = require('autoprefixer')({ grid: true });
 const FileManagerPlugin = require('filemanager-webpack-plugin');
 const UglifyJsPlugin = require("uglifyjs-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
@@ -25,10 +25,12 @@ const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 const npmPackage = 'node_modules/';
 const srcDir = path.resolve(__dirname, "lib");
 const distDir = path.resolve(__dirname, "dist");
-const srcSass = path.resolve(__dirname, process.env.npm_package_config_srcSass);
-const distSass = path.resolve(__dirname, process.env.npm_package_config_distSass);
-const srcJS = path.resolve(__dirname, process.env.npm_package_config_srcJS);
-const distJS = path.resolve(__dirname, process.env.npm_package_config_distJS);
+const srcSass = path.resolve(__dirname, "lib/scss");
+const distSass = path.resolve(__dirname, "dist/css");
+const srcJS = path.resolve(__dirname, "lib/js");
+const distJS = path.resolve(__dirname, "dist/js");
+const srcAssets = path.resolve(__dirname, "lib/assets");
+const distAssets = path.resolve(__dirname, "dist/assets");
 
 // /////////////////////////////////////////////////////////////////////////////
 // Functions ///////////////////////////////////////////////////////////////////
@@ -46,20 +48,20 @@ var webpackConfig = {
   devtool: 'source-map',
   // What build?
   entry: {
-    "jumpstart_ui": path.resolve(__dirname, srcJS + "/jumpstart_ui.js"),
-    "jumpstart_ui.base": path.resolve(__dirname, srcSass + "/jumpstart_ui.base.scss"),
-    "jumpstart_ui.layout": path.resolve(__dirname, srcSass + "/jumpstart_ui.layout.scss"),
-    "alert": path.resolve(__dirname, srcSass + "/components/alert.component.scss"),
-    "brand-bar": path.resolve(__dirname, srcSass + "/components/brand-bar.component.scss"),
-    "button": path.resolve(__dirname, srcSass + "/components/button.component.scss"),
-    "card": path.resolve(__dirname, srcSass + "/components/card.component.scss"),
-    "cta": path.resolve(__dirname, srcSass + "/components/cta.component.scss"),
-    "global-footer": path.resolve(__dirname, srcSass + "/components/global-footer.component.scss"),
-    "hero": path.resolve(__dirname, srcSass + "/components/hero.component.scss"),
-    "link": path.resolve(__dirname, srcSass + "/components/link.component.scss"),
-    "lockup": path.resolve(__dirname, srcSass + "/components/lockup.component.scss"),
-    "logo": path.resolve(__dirname, srcSass + "/components/logo.component.scss"),
-    "quote": path.resolve(__dirname, srcSass + "/components/quote.component.scss"),
+    "jumpstart_ui":         path.resolve(__dirname, srcJS + "/jumpstart_ui.js"),
+    "jumpstart_ui.base":    path.resolve(__dirname, srcSass + "/jumpstart_ui.base.scss"),
+    "jumpstart_ui.layout":  path.resolve(__dirname, srcSass + "/jumpstart_ui.layout.scss"),
+    "alert":                path.resolve(__dirname, srcSass + "/components/alert.component.scss"),
+    "brand-bar":            path.resolve(__dirname, srcSass + "/components/brand-bar.component.scss"),
+    "button":               path.resolve(__dirname, srcSass + "/components/button.component.scss"),
+    "card":                 path.resolve(__dirname, srcSass + "/components/card.component.scss"),
+    "cta":                  path.resolve(__dirname, srcSass + "/components/cta.component.scss"),
+    "global-footer":        path.resolve(__dirname, srcSass + "/components/global-footer.component.scss"),
+    "hero":                 path.resolve(__dirname, srcSass + "/components/hero.component.scss"),
+    "link":                 path.resolve(__dirname, srcSass + "/components/link.component.scss"),
+    "lockup":               path.resolve(__dirname, srcSass + "/components/lockup.component.scss"),
+    "logo":                 path.resolve(__dirname, srcSass + "/components/logo.component.scss"),
+    "quote":                path.resolve(__dirname, srcSass + "/components/quote.component.scss")
   },
   // Where put build?
   output: {
@@ -69,9 +71,8 @@ var webpackConfig = {
   // Relative output paths for css assets.
   resolve: {
     alias: {
-      'decanter-assets': path.resolve(npmPackage + 'decanter/core/src/img'),
-      'decanter': path.resolve(npmPackage + 'decanter/core/src'),
-      '@fortawesome': path.resolve(npmPackage + '@fortawesome')
+      '#fortawesome-fonts': path.resolve(npmPackage, '@fortawesome/fontawesome-free/webfonts/'),
+      '#decanter-img': path.resolve(npmPackage, 'decanter/core/src/img/')
     }
   },
   // Additional module rules.
@@ -111,28 +112,22 @@ var webpackConfig = {
           },
           // Post CSS. Run autoprefixer plugin.
           {
-            loader: 'postcss-loader',
-            options: {
-              sourceMap: true,
-              plugins: () => [
-                autoprefixer()
-              ]
-            }
+            loader: 'postcss-loader'
           },
           // SASS Loader. Add compile paths to include bourbon.
           {
             loader: 'sass-loader',
             options: {
-              includePaths: [
-                path.resolve(__dirname, npmPackage, "bourbon/core"),
-                path.resolve(__dirname, npmPackage + "/decanter/core/src/scss"),
-                path.resolve(__dirname, srcSass),
-                path.resolve(__dirname, npmPackage)
-              ],
+              implementation: require('sass'),
               sourceMap: true,
-              lineNumbers: true,
-              outputStyle: 'nested',
-              precision: 10
+              sassOptions: {
+                includePaths: [
+                  path.resolve(__dirname, npmPackage),
+                  path.resolve(__dirname, srcSass)
+                ],
+                lineNumbers: true,
+                precision: 10
+              }
             }
           }
         ]

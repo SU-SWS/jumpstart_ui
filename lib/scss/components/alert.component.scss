@@ -2,5 +2,5 @@
 // This file imports the base styles from decanter so they can be included
 // or removed by a theme.
 @import '../jumpstart_ui.config';
-@import 'decanter-no-markup';
-@import '~decanter/scss/components/alert/index';
+@import 'decanter/core/src/scss/decanter-no-markup';
+@import 'decanter/core/src/scss/components/alert/index';
