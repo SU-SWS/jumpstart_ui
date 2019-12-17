@@ -6,7 +6,7 @@ Feature: Local Footer Component
 
   Scenario: Validate Local Footer Component.
     Given I am logged in as a user with the "administrator" role
-    And I am on "/patterns/local-footer"
+    And I am on "/patterns/localfooter"
 
     # Fields
     Then I should see "lockup_title" in the "content" region
