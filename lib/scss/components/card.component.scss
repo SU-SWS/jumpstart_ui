@@ -2,3 +2,20 @@
 @import '../jumpstart_ui.config';
 @import 'decanter/core/src/scss/decanter-no-markup';
 @import 'decanter/core/src/scss/components/card/index';
+
+.su-card {
+  .media {
+    &.video {
+      position: relative;
+      padding-top: 56.25%;
+
+      iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
