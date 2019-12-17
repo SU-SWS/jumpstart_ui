@@ -72,8 +72,7 @@ var webpackConfig = {
   // Relative output paths for css assets.
   resolve: {
     alias: {
-      '#fortawesome-fonts': path.resolve(npmPackage, '@fortawesome/fontawesome-free/webfonts/'),
-      '#decanter-img': path.resolve(npmPackage, 'decanter/core/src/img/')
+      '~': path.resolve(npmPackage)
     }
   },
   // Additional module rules.
@@ -150,18 +149,11 @@ var webpackConfig = {
           // A loader for webpack which transforms files into base64 URIs.
           // https://github.com/webpack-contrib/url-loader
           {
-            loader: 'url-loader',
+            loader: "file-loader",
             options: {
-              // Maximum size of a file in bytes. 8.192 Kilobtyes.
-              limit: 8192,
-              fallback: {
-                loader: "file-loader",
-                options: {
-                  name: "[name].[ext]",
-                  publicPath: "../assets/img",
-                  outputPath: "../assets/img"
-                }
-              }
+              name: "[name].[ext]",
+              publicPath: "../assets/img",
+              outputPath: "../assets/img"
             }
           }
         ]
@@ -173,18 +165,11 @@ var webpackConfig = {
           // A loader for webpack which transforms files into base64 URIs.
           // https://github.com/webpack-contrib/url-loader
           {
-            loader: 'url-loader',
+            loader: "file-loader",
             options: {
-              // Maximum size of a file in bytes. 8.192 Kilobtyes.
-              limit: 8192,
-              fallback: {
-                loader: "file-loader",
-                options: {
-                  name: "[name].[ext]",
-                  publicPath: "../assets/svg",
-                  outputPath: "../assets/svg"
-                }
-              }
+              name: "[name].[ext]",
+              publicPath: "../assets/svg",
+              outputPath: "../assets/svg"
             }
           }
         ]

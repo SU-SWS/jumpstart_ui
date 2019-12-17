@@ -2,5 +2,5 @@
 
 // This file imports the base styles from decanter so they can be included
 // or removed by a theme.
-$su-image-path: "#decanter-img";
-$fa-font-path: "#fortawesome-fonts";
+$su-image-path: "~decanter/core/src/img";
+$fa-font-path:  "~@fortawesome/fontawesome-free/webfonts";
