@@ -58,7 +58,7 @@ media:
       label: "Custom embed"
       description: "Usually an iframe"
       preview: "<iframe width='560' height='315' src='https://www.youtube.com/embed/tZ2GZhND7s0' frameborder='0' allowfullscreen></iframe>"
-  use: "@decanter/components/media/media.twig"
+  use: "@jumpstart_ui/components/media/media.html.twig"
   libraries:
     - media:
        css:
