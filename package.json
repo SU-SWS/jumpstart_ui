@@ -36,13 +36,11 @@
     "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.9.0",
     "webpack-fix-style-only-entries": "^0.2.2",
-    "webpack-manifest-plugin": "^2.2.0"
+    "webpack-manifest-plugin": "^2.2.0",
+    "fibers": "^4.0.2",
+    "sass": "^1.23.7"
   },
   "description": "=========================== How to Use Grunt with Stanford Module Example ===========================",
   "author": "Stanford Web Services",
-  "license": "GPLV2",
-  "dependencies": {
-    "fibers": "^4.0.2",
-    "sass": "^1.23.7"
-  }
+  "license": "GPLV2"
 }
