@@ -56,6 +56,7 @@ var webpackConfig = {
     "button":               path.resolve(__dirname, srcSass + "/components/button.component.scss"),
     "card":                 path.resolve(__dirname, srcSass + "/components/card.component.scss"),
     "cta":                  path.resolve(__dirname, srcSass + "/components/cta.component.scss"),
+    "date-stacked":         path.resolve(__dirname, srcSass + "/components/date-stacked.component.scss"),
     "global-footer":        path.resolve(__dirname, srcSass + "/components/global-footer.component.scss"),
     "hero":                 path.resolve(__dirname, srcSass + "/components/hero.component.scss"),
     "link":                 path.resolve(__dirname, srcSass + "/components/link.component.scss"),
