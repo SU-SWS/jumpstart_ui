@@ -2,3 +2,15 @@
 @import '../jumpstart_ui.config';
 @import 'decanter-no-markup';
 @import '~decanter/scss/components/hero/index';
+
+.su-hero {
+  .su-hero__media {
+    // Ensure everything gets set to 100% so that the object-fit property works.
+    > div,
+    > article,
+    .media,
+    .image {
+      height: 100%;
+    }
+  }
+}
