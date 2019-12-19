@@ -63,7 +63,8 @@ var webpackConfig = {
     "lockup":               path.resolve(__dirname, srcSass + "/components/lockup.component.scss"),
     "logo":                 path.resolve(__dirname, srcSass + "/components/logo.component.scss"),
     "media":                path.resolve(__dirname, srcSass + "/components/media.component.scss"),
-    "quote":                path.resolve(__dirname, srcSass + "/components/quote.component.scss")
+    "quote":                path.resolve(__dirname, srcSass + "/components/quote.component.scss"),
+    "layouts":              path.resolve(__dirname, srcSass + "/layouts/index.scss")
   },
   // Where put build?
   output: {
