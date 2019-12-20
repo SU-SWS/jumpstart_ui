@@ -9,6 +9,10 @@
 {% if card_cta_label is not empty %}
   {% set card_button_label = null %}
 {% endif %}
-{%
-  include "@decanter/components/card/card.twig"
-%}
+
+{% block block_card_media %}
+  {{ card_image }}
+  {{ card_media_custom }}
+{% endblock %}
+
+{% extends "@decanter/components/card/card.twig" %}
