@@ -1,6 +1,8 @@
 @charset 'UTF-8';
+@import '../jumpstart_ui.config';
 
 .node-stanford-page-su-page-components {
-  padding-left: 150px;
-  background-color: red;
+  @media #{$su-breakpoint-xl} {
+    padding-left: 150px;
+  }
 }
