@@ -56,12 +56,6 @@ layout:
     base:
       dist/css/jumpstart_ui.layout.css: {}
 
-layouts:
-  version: VERSION
-  css:
-    base:
-      dist/css/layouts.css: {}
-
 jumpstart_ui:
   version: VERSION
   css:
