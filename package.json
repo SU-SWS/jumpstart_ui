@@ -17,7 +17,7 @@
     "babel-loader": "^8.0.5",
     "bourbon": "^5.0.0",
     "css-loader": "^3.0",
-    "decanter": "git+https://github.com/SU-SWS/decanter.git#v6",
+    "decanter": "^6.0.0",
     "drupal-behaviors-loader": "^1.0.1",
     "eslint": "^5.15.3",
     "extra-watch-webpack-plugin": "^1.0.3",
