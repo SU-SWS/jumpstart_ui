@@ -4,8 +4,5 @@
 @import './jumpstart_ui.config';
 @import '~decanter/core/src/scss/decanter-no-markup';
 
-// Render Decanter Library Base Styles Only.
-@import '~decanter/core/src/scss/layout/index';
-
 // Jumpstart UI Custom Styles
 @import './layouts/index';
