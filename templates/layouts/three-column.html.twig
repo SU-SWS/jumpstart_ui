@@ -1,14 +1,14 @@
 {% set main_class = '' %}
 {% if content.left|render and content.right|render %}
-  {% set main_class = 'flex-md-6-of-12' %}
+  {% set main_class = 'flex-lg-6-of-12' %}
 {% elseif content.left|render or content.right|render %}
-  {% set main_class = 'flex-md-9-of-12' %}
+  {% set main_class = 'flex-lg-9-of-12' %}
 {% endif %}
 
 <div{{ attributes.addClass('jumpstart-ui--two-column', 'flex-container', settings.centered, settings.extra_classes) }}>
 
   {% if content.left|render %}
-    <aside {{ region_attributes.left.addClass('left-region', 'flex-md-3-of-12') }}>
+    <aside {{ region_attributes.left.addClass('left-region', 'flex-lg-3-of-12') }}>
       {{ content.left }}
     </aside>
   {% endif %}
@@ -20,7 +20,7 @@
   {% endif %}
 
   {% if content.right|render %}
-    <aside {{ region_attributes.right.addClass('right-region', 'flex-md-3-of-12') }}>
+    <aside {{ region_attributes.right.addClass('right-region', 'flex-lg-3-of-12') }}>
       {{ content.right }}
     </aside>
   {% endif %}
