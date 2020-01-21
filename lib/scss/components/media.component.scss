@@ -10,4 +10,18 @@
       @include aspect-ratio(4, 3, iframe);
     }
   }
+
+  .su-media__caption {
+    float: right;
+
+    @include grid-media("lg") {
+      width: ceil($su-screen-lg * 0.6);
+    }
+    @include grid-media("xl") {
+      width: ceil($su-screen-xl * 0.6);
+    }
+    @include grid-media("2xl") {
+      width: ceil($su-screen-2xl * 0.6);
+    }
+  }
 }
