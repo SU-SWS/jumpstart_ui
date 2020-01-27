@@ -32,7 +32,7 @@ alert:
       label: Content
       description: "The body of the alert message."
       preview: "This message was brought to you by the good people at Stanford Web Services."
-  use: "@decanter/components/alert/alert.twig"
+  use: "@jumpstart_ui/components/alert/alert.html.twig"
   libraries:
     - alert:
        css:

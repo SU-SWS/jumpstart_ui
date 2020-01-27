@@ -113,7 +113,7 @@ lockup:
       label: "Line 5"
       description: "Line 5 of the unit/site name text (at the bottom part of the lockup)."
       preview: "Line 5 of the unit/site name text "
-  use: "@decanter/components/lockup/lockup.twig"
+  use: "@jumpstart_ui/components/lockup/lockup.html.twig"
   libraries:
     - lockup:
        css:

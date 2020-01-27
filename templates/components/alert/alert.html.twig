@@ -1,0 +1,5 @@
+{# Override of Decanter's Core Template #}
+{% set attributes = attributes.removeClass('su-alert') %}
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class') %}
+{% extends '@decanter/components/alert/alert.twig' %}

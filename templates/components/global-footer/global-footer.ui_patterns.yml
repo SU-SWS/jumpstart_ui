@@ -1,7 +1,7 @@
 globalfooter:
   label: "Global Footer"
   description: "Global footer element as specified by the Identity Guidelines."
-  use: "@decanter/components/global-footer/global-footer.twig"
+  use: "@jumpstart_ui/components/global-footer/global-footer.html.twig"
   libraries:
     - globalfooter:
        css:

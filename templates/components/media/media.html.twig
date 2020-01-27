@@ -1,2 +1,6 @@
 {%- set media_link = media_link|render|striptags('<drupal-render-placeholder>') -%}
+{% set attributes = attributes.removeClass('su-media') %}
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class') %}
+
 {% extends "@decanter/components/media/media.twig" %}

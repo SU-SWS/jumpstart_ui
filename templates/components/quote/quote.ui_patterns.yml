@@ -27,7 +27,7 @@ quote:
       label: "Image alt text"
       description: "The alt text html property"
       preview: "This is the image alt text field"
-  use: "@decanter/components/quote/quote.twig"
+  use: "@jumpstart_ui/components/quote/quote.html.twig"
   libraries:
     - quote:
        css:

@@ -15,4 +15,8 @@
   {{ card_media_custom }}
 {% endblock %}
 
+{% set attributes = attributes.removeClass('su-card') %}
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class') %}
+
 {% extends "@decanter/components/card/card.twig" %}

@@ -1,0 +1,5 @@
+{# Glue code for Decanter's component #}
+{% set attributes = attributes.removeClass('su-button') %}
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class', 'value', 'name', 'type') %}
+{% extends '@decanter/components/button/button.twig' %}

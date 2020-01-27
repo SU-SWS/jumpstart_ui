@@ -12,7 +12,7 @@ logo:
       label: "Logo Text"
       description: "The text for the ligature logo - either Stanford<br>University or Stanford."
       preview: "Stanford</br>University"
-  use: "@decanter/components/logo/logo.twig"
+  use: "@jumpstart_ui/components/logo/logo.html.twig"
   libraries:
     - logo:
        css:

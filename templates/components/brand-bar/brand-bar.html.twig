@@ -1,0 +1,5 @@
+{# Glue code for Decanter's component #}
+{% set attributes = attributes.removeClass('su-brand-bar') %}
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class') %}
+{% extends '@decanter/components/brand-bar/brand-bar.twig' %}

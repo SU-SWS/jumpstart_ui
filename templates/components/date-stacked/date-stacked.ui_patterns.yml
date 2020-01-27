@@ -20,7 +20,7 @@ date-stacked:
       label: "Day of month"
       description: "eg: 31"
       preview: "31"
-  use: "@decanter/components/date-stacked/date-stacked.twig"
+  use: "@jumpstart_ui/components/date-stacked/date-stacked.html.twig"
   libraries:
     - date-stacked:
        css:
