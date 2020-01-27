@@ -18,6 +18,9 @@
 {%- set secondary_links_header = secondary_links_header|render|striptags('<drupal-render-placeholder><a>')|trim -%}
 
 {% set attributes = attributes.removeClass('su-local-footer') %}
+{% if modifier_class is not empty %}
+  {% set attributes = attributes.addClass(modifier_class) %}
+{% endif %}
 {% set modifier_class = attributes.class %}
 {% set attributes = attributes|without('class') %}
 
