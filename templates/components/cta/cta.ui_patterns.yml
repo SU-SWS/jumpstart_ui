@@ -48,7 +48,7 @@ cta:
       label: "Icon alt text"
       description: "The alt text html property"
       preview: "This is the icon alt text field"
-  use: "@jumpstartui/components/cta/cta.html.twig"
+  use: "@jumpstart_ui/components/cta/cta.html.twig"
   libraries:
     - cta:
        css:
