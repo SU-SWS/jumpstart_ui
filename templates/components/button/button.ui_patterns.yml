@@ -37,7 +37,7 @@ button:
       label: "Button Type"
       description: "The button type. Eg: submit | button | reset."
       preview: "submit."
-  use: "@decanter/components/button/button.twig"
+  use: "@jumpstart_ui/components/button/button.html.twig"
   libraries:
     - button:
        css:

@@ -1,4 +1,4 @@
-{%- extends "@decanter/components/local-footer/local-footer.twig" -%}
+{# Glue code for Decanter's component #}
 {% import "@jumpstart_ui/macros/field-links-to-list.twig" as linklist %}
 {% import "@jumpstart_ui/macros/field-links-to-social-list.twig" as sociallist %}
 
@@ -14,3 +14,14 @@
 {%- set social_links = sociallist.create_list(social_links) -%}
 {%- set primary_links = linklist.create_list(primary_links) -%}
 {%- set secondary_links = linklist.create_list(secondary_links) -%}
+{%- set primary_links_header = primary_links_header|render|striptags('<drupal-render-placeholder><a>')|trim -%}
+{%- set secondary_links_header = secondary_links_header|render|striptags('<drupal-render-placeholder><a>')|trim -%}
+
+{% set attributes = attributes.removeClass('su-local-footer') %}
+{% if modifier_class is not empty %}
+  {% set attributes = attributes.addClass(modifier_class) %}
+{% endif %}
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class') %}
+
+{%- extends "@decanter/components/local-footer/local-footer.twig" -%}
