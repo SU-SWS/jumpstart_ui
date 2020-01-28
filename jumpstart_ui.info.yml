@@ -12,6 +12,7 @@ dependencies:
   - ui_patterns:ui_patterns
   - ui_patterns_layouts:ui_patterns_layouts
   - ui_patterns_library:ui_patterns_library
+  - twig_extender:twig_extender
 
 component-libraries:
   decanter:

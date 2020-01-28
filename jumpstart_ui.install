@@ -1,0 +1,11 @@
+<?php
+/**
+ * @file
+ */
+
+/**
+ * Install new twig_extender dependency.
+ */
+function jumpstart_ui_update_8100($context) {
+  \Drupal::service('module_installer')->install(['twig_extender']);
+}
