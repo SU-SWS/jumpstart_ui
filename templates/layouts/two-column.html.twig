@@ -8,7 +8,6 @@
 
   {% if content.main|render %}
     <section {{ region_attributes.main.addClass('main-region', content.left|render  ? 'flex-lg-9-of-12' : '') }}>
-      <a name="main-content" id="{{ getUniqueId('main-content') }}" tabindex="-1" class="visually-hidden focusable">{{ 'Main Content'|t }}</a>
       {{ content.main }}
     </section>
   {% endif %}

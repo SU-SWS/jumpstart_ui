@@ -16,7 +16,6 @@
     "drupal/core": "^8.8",
     "drupal/components": "~1.0",
     "drupal/ds": "~3.3",
-    "drupal/ui_patterns": "~1.0",
-    "drupal/twig_extender": "~2.4"
+    "drupal/ui_patterns": "~1.0"
   }
 }

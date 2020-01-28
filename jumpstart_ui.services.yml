@@ -1,0 +1,5 @@
+services:
+  jumpstart_ui.twig:
+    class: Drupal\jumpstart_ui\Plugin\TwigPlugin\JumpstartUITwig
+    tags:
+      - { name: twig.extension }
