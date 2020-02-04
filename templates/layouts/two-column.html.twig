@@ -1,15 +1,15 @@
 <div{{ attributes.addClass('jumpstart-ui--three-column', 'flex-container', settings.centered, settings.extra_classes) }}>
 
   {% if content.left|render %}
-    <aside {{ region_attributes.left.addClass('left-region', 'flex-lg-3-of-12') }}>
+    <div {{ region_attributes.left.addClass('left-region', 'flex-lg-3-of-12') }}>
       {{ content.left }}
-    </aside>
+    </div>
   {% endif %}
 
   {% if content.main|render %}
-    <section {{ region_attributes.main.addClass('main-region', content.left|render  ? 'flex-lg-9-of-12' : '') }}>
+    <div {{ region_attributes.main.addClass('main-region', content.left|render  ? 'flex-lg-9-of-12' : '') }}>
       {{ content.main }}
-    </section>
+    </div>
   {% endif %}
 
 </div>

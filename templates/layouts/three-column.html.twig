@@ -8,20 +8,20 @@
 <div{{ attributes.addClass('jumpstart-ui--two-column', 'flex-container', settings.centered, settings.extra_classes) }}>
 
   {% if content.left|render %}
-    <aside {{ region_attributes.left.addClass('left-region', 'flex-lg-3-of-12') }}>
+    <div {{ region_attributes.left.addClass('left-region', 'flex-lg-3-of-12') }}>
       {{ content.left }}
-    </aside>
+    </div>
   {% endif %}
 
   {% if content.main|render %}
-    <section {{ region_attributes.main.addClass('main-region', main_class) }}>
+    <div {{ region_attributes.main.addClass('main-region', main_class) }}>
       {{ content.main }}
-    </section>
+    </div>
   {% endif %}
 
   {% if content.right|render %}
-    <aside {{ region_attributes.right.addClass('right-region', 'flex-lg-3-of-12') }}>
+    <div {{ region_attributes.right.addClass('right-region', 'flex-lg-3-of-12') }}>
       {{ content.right }}
-    </aside>
+    </div>
   {% endif %}
 </div>
