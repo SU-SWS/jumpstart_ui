@@ -1,5 +1,15 @@
 # Jumpstart UI
 
+8.x-1.0
+--------------------------------------------------------------------------------
+_Release Date: 2020-02-05_
+
+- Updated to use Decanter version 6.0.1
+- D8CORE-714: Ensure no duplicate attributes on components
+- D8CORE-931: Skip Links
+- D8CORE-1250: Changed aside and section tags to divs since cannot predict content and using semantics wrong
+
+
 8.x-1.0-alpha4
 --------------------------------------------------------------------------------
 _Release Date: 2020-01-22_
