@@ -28,4 +28,4 @@
 {% set modifier_class = attributes.class %}
 {% set attributes = attributes|without('class') %}
 
-{% include "@decanter/components/card/card.twig" %}
+{% extends "@decanter/components/card/card.twig" %}
