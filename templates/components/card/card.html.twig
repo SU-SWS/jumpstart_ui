@@ -15,11 +15,17 @@
   {{ card_media_custom }}
 {% endblock %}
 
-{% set attributes = attributes.removeClass('su-card') %}
+{% if attributes is not empty %}
+  {% set attributes = attributes.removeClass('su-card') %}
+{% else %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
 {% if modifier_class is not empty %}
   {% set attributes = attributes.addClass(modifier_class) %}
 {% endif %}
+
 {% set modifier_class = attributes.class %}
 {% set attributes = attributes|without('class') %}
 
-{% extends "@decanter/components/card/card.twig" %}
+{% include "@decanter/components/card/card.twig" %}
