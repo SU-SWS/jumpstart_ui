@@ -1,5 +1,13 @@
 # Jumpstart UI
 
+8.x-1.1
+--------------------------------------------------------------------------------
+_Release Date: 2020-02-14_
+
+- Don't provide a login link to the local footer pattern if already logged in.
+- Fixed the class on the two column pattern
+- D8CORE-1233: Cannot assume attributes is being passed in. (#26)
+
 8.x-1.0
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-05_
@@ -40,7 +48,7 @@ configurable layouts.
 - Caravan running with latest-drupal now
 
 8.x-1.0-alpha1
---------------------------------------------------------------------------------  
+--------------------------------------------------------------------------------
 _Release Date: 2019-10-30_
 
 - Initial Release.
