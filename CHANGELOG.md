@@ -1,5 +1,12 @@
 # Jumpstart UI
 
+8.x-1.1
+--------------------------------------------------------------------------------
+_Release Date: 2020-02-14_
+
+- D8CORE-1233: Cannot assume attributes is being passed in. (#26)
+- Bugfix: jumpstart-ui--three-column to jumpstart-ui--two-column (#27)
+
 8.x-1.0
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-05_
