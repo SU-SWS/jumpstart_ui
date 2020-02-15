@@ -1,5 +1,13 @@
 # Jumpstart UI
 
+8.x-1.1
+--------------------------------------------------------------------------------
+_Release Date: 2020-02-14_
+
+- Don't add the login link to the local footer pattern for logged in users.
+- D8CORE-1233: Cannot assume attributes is being passed in. (#26)
+- Bugfix: jumpstart-ui--three-column to jumpstart-ui--two-column (#27)
+
 8.x-1.0
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-05_
@@ -40,7 +48,7 @@ configurable layouts.
 - Caravan running with latest-drupal now
 
 8.x-1.0-alpha1
---------------------------------------------------------------------------------  
+--------------------------------------------------------------------------------
 _Release Date: 2019-10-30_
 
 - Initial Release.
