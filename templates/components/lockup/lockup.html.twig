@@ -1,6 +1,6 @@
-{%- set media_link = media_link|render|striptags('<drupal-render-placeholder>') -%}
+{# Glue code for Decanter's component #}
 {% if attributes is not empty %}
-  {% set attributes = attributes.removeClass('su-media') %}
+  {% set attributes = attributes.removeClass('su-lockup') %}
 {% else %}
   {% set attributes = create_attribute() %}
 {% endif %}
@@ -10,6 +10,6 @@
 {% endif %}
 
 {% set modifier_class = attributes.class %}
-{% set attributes = attributes|without('class') %}
 
-{% extends "@decanter/components/media/media.twig" %}
+{% set attributes = attributes|without('class') %}
+{% extends '@decanter/components/lockup/lockup.twig' %}

@@ -1,6 +1,6 @@
-{%- set media_link = media_link|render|striptags('<drupal-render-placeholder>') -%}
+{# Override of Decanter's Core Template #}
 {% if attributes is not empty %}
-  {% set attributes = attributes.removeClass('su-media') %}
+  {% set attributes = attributes.removeClass('su-alert') %}
 {% else %}
   {% set attributes = create_attribute() %}
 {% endif %}
@@ -11,5 +11,4 @@
 
 {% set modifier_class = attributes.class %}
 {% set attributes = attributes|without('class') %}
-
-{% extends "@decanter/components/media/media.twig" %}
+{% extends '@decanter/components/alert/alert.twig' %}

@@ -47,9 +47,20 @@
 #}
 {%- set template_path_card = "@jumpstart_ui/components/card/card.html.twig" -%}
 
+{% if attributes is not empty %}
+  {% set attributes = attributes.removeClass('su-hero') %}
+{% else %}
+  {% set attributes = create_attribute() %}
+{% endif %}
+
+{% if modifier_class is not empty %}
+  {% set attributes = attributes.addClass(modifier_class) %}
+{% endif %}
+
+{% set modifier_class = attributes.class %}
+{% set attributes = attributes|without('class') %}
+
 {#
   Include the template.
 #}
-{%
-  include "@decanter/components/hero/hero.twig"
-%}
+{% extends "@decanter/components/hero/hero.twig" %}

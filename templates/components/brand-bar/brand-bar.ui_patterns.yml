@@ -17,7 +17,7 @@ brandbar:
       label: White
       description: "Cardinal red wordmark on white background"
       modifier_class: su-brand-bar--white
-  use: "@decanter/components/brand-bar/brand-bar.twig"
+  use: "@jumpstart_ui/components/brand-bar/brand-bar.html.twig"
   libraries:
     - brandbar:
        css:
