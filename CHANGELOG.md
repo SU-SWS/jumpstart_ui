@@ -1,5 +1,10 @@
 # Jumpstart UI
 
+8.x-1.3
+_Release Date: 2020-02-21_
+
+- D8CORE-1398: Fix broken link mapping for hero buttons
+
 8.x-1.2
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-19_
