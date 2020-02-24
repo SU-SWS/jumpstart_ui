@@ -3,6 +3,7 @@
  #}
 {%- set card_cta_label = card_cta_label|render|striptags('<drupal-render-placeholder>') -%}
 {%- set card_link = card_link|render|striptags('<drupal-render-placeholder>') -%}
+
 {#
   You are not allowed to have both action and button at the same time so remove the button
 #}
@@ -10,11 +11,17 @@
   {% set card_button_label = null %}
 {% endif %}
 
+{#
+  Override the media section as Drupal has it's own output.
+#}
 {% block block_card_media %}
   {{ card_image }}
   {{ card_media_custom }}
 {% endblock %}
 
+{#
+  Attributes get passed along so we need to ensure only what we want trickles down to the nested templates.
+#}
 {% if attributes is not empty %}
   {% set attributes = attributes.removeClass('su-card') %}
 {% else %}
