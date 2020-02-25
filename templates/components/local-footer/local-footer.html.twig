@@ -8,7 +8,7 @@
 {%- endif -%}
 {%- set lockup_title = lockup_title|render|striptags('<drupal-render-placeholder>')|trim -%}
 {%- set signup_form_method = signup_form_method|render|striptags('<drupal-render-placeholder>')|trim -%}
-{%- set signup_form_action = signup_form_action|render|striptags('<drupal-render-placeholder>')|trim -%}
+{%- set signup_form_action = signup_form_action|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
 {%- set signup_form_field_submit_value = signup_form_field_submit_value|render|striptags('<drupal-render-placeholder>')|trim -%}
 {%- set action_links = linklist.create_list(action_links) -%}
 {%- set social_links = sociallist.create_list(social_links) -%}
