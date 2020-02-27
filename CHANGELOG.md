@@ -4,7 +4,12 @@
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-27_
 
--
+- D8CORE-1427: Remove render array junk when checking for empty on hero_link variable in hero.html.twig template. (#35)
+- D8CORE-1457: Allow special chars in urls. (#38)
+- D8CORE-1327: fixing the footer for special characters (#39)
+- Update to Decanter 6.0.4 (#36)
+- Change to three column class selector. (#40)
+- Decanter Version 6.0.5 (#41)
 
 8.x-1.3
 --------------------------------------------------------------------------------
