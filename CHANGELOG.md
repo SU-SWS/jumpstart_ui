@@ -10,6 +10,7 @@ _Release Date: 2020-02-27_
 - Update to Decanter 6.0.4 (#36)
 - Change to three column class selector. (#40)
 - Decanter Version 6.0.5 (#41)
+- D8CORE-1291: IE fixes (#43)
 
 8.x-1.3
 --------------------------------------------------------------------------------
