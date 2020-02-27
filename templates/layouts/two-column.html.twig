@@ -1,3 +1,11 @@
+{% if content.left|render %}
+  {% set region_attributes_main = region_attributes.main.addClass('flex-lg-9-of-12') %}
+  {% set region_attributes = region_attributes|merge({'main': region_attributes_main}) %}
+{% elseif 'centered-container' in settings.centered|render %}
+  {% set region_attributes_main = region_attributes.main.addClass('flex-12-of-12') %}
+  {% set region_attributes = region_attributes|merge({'main': region_attributes_main}) %}
+{% endif %}
+
 <div{{ attributes.addClass('jumpstart-ui--two-column', 'flex-container', settings.centered, settings.extra_classes) }}>
 
   {% if content.left|render %}
@@ -7,7 +15,7 @@
   {% endif %}
 
   {% if content.main|render %}
-    <div {{ region_attributes.main.addClass('main-region', content.left|render  ? 'flex-lg-9-of-12' : '') }}>
+    <div {{ region_attributes.main.addClass('main-region') }}>
       {{ content.main }}
     </div>
   {% endif %}

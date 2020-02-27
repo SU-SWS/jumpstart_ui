@@ -5,6 +5,10 @@
   {% set main_class = 'flex-lg-9-of-12' %}
 {% endif %}
 
+{% if content.left|render is empty and content.right|render is empty and 'centered-container' in settings.centered|render %}
+  {% set main_class = 'flex-12-of-12' %}
+{% endif %}
+
 <div{{ attributes.addClass('jumpstart-ui--three-column', 'flex-container', settings.centered, settings.extra_classes) }}>
 
   {% if content.left|render %}
