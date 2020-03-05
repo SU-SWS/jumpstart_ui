@@ -8,7 +8,7 @@ use Symfony\Component\DependencyInjection\Definition;
 use Drupal\Core\Template\Attribute;
 
 /**
- * Class TwoColLayoutTest.
+ * Class ThreeColLayoutTest.
  *
  * @group jumpstart_ui
  */
