@@ -1,7 +1,7 @@
-{% if content.left|render %}
+{% if content.left|render and region_attributes.main is iterable %}
   {% set region_attributes_main = region_attributes.main.addClass('flex-lg-9-of-12') %}
   {% set region_attributes = region_attributes|merge({'main': region_attributes_main}) %}
-{% elseif 'centered-container' in settings.centered|render %}
+{% elseif 'centered-container' in settings.centered|render and region_attributes.main is iterable %}
   {% set region_attributes_main = region_attributes.main.addClass('flex-12-of-12') %}
   {% set region_attributes = region_attributes|merge({'main': region_attributes_main}) %}
 {% endif %}
