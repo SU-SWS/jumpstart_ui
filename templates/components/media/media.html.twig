@@ -1,6 +1,11 @@
 {%- set media_link = media_link|render|striptags('<drupal-render-placeholder>') -%}
 {% if attributes is not empty %}
   {% set attributes = attributes.removeClass('su-media') %}
+  {#
+    D8CORE-154: Ensure unqiue ids by changing the ID that is automatically provided by ui_patterns_ds.
+    It is unfortunate that this template is called `media` and that we render a `media` item within.
+  #}
+  {% set attributes = attributes.setAttribute('id', getUniqueId('su-media')) %}
 {% else %}
   {% set attributes = create_attribute() %}
 {% endif %}
