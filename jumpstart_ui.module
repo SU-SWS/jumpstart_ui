@@ -10,6 +10,7 @@
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
 use Drupal\ui_patterns\UiPatterns;
+use Drupal\ui_patterns\Element\PatternContext;
 
 /**
  * Implements hook_page_attachments().
@@ -32,11 +33,13 @@ function jumpstart_ui_page_attachments(array &$page) {
  * Implements hook_preprocess().
  */
 function jumpstart_ui_preprocess(&$variables, $hook) {
-  $moduleHandler = \Drupal::service('module_handler');
-  if (!$moduleHandler->moduleExists('ui_patterns')) {
+
+  // Only want pattern contexts.
+  if (isset($variables['context']) && !($variables['context'] instanceof PatternContext)) {
     return;
   }
 
+  // Match the hook with a strpos because it is not consistent.
   foreach (UiPatterns::getPatternDefinitions() as $pattern_id => $pattern) {
     if (strpos($hook, $pattern_id) !== FALSE) {
 
