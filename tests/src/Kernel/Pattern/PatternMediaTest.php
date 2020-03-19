@@ -3,8 +3,6 @@
 namespace Drupal\Tests\jumpstart_ui\Kernel\Pattern;
 
 use Drupal\KernelTests\KernelTestBase;
-use Drupal\Core\DependencyInjection\ContainerBuilder;
-use Symfony\Component\DependencyInjection\Definition;
 use Drupal\Core\Template\Attribute;
 use Twig\TemplateWrapper;
 
@@ -63,7 +61,7 @@ class PatternMediaTest extends KernelTestBase {
     $this->assertTwigTemplate($this->twig->load('@jumpstart_ui/components/card/card.html.twig'), 'Found card.html.twig in jumpstart_ui module.');
 
     // Tests resolving namespaced templates in the Decanter templates.
-    $this->assertTwigTemplate($this->twig->load('@decanter/components/card/card.twig'), 'Found card.html.twig in jumpstart_ui module.');
+    $this->assertTwigTemplate($this->twig->load('@decanter/components/card/card.twig'), 'Found card.twig in jumpstart_ui module.');
   }
 
   /**
