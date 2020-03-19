@@ -21,9 +21,19 @@ class PatternMediaTest extends KernelTestBase {
    */
   public static $modules = [
     'system',
-    'jumpstart_ui'
+    'jumpstart_ui',
+    'components',
+    'file',
+    'ui_patterns',
+    'ui_patterns_ds',
+    'node',
+    'user'
   ];
 
+  public function setup() {
+    parent::setup();
+    // $this->installSchema('components', 'settings');
+  }
 
   /**
    * {@inheritdoc}
@@ -31,7 +41,14 @@ class PatternMediaTest extends KernelTestBase {
   public function register(ContainerBuilder $container) {
     parent::register($container);
 
-    $container->setDefinition('twig_loader__file_system', new Definition('Twig_Loader_Filesystem', [[dirname(__FILE__, 5) . '/templates/components/']]))
+    $container->setDefinition('twig_loader__file_system', new Definition('Twig_Loader_Filesystem',
+      [
+        [
+          dirname(__FILE__, 5) . '/templates/components/',
+          dirname(__FILE__, 5) . '/dist/templates/'
+        ]
+      ]
+    ))
       ->addTag('twig.loader');
   }
 
