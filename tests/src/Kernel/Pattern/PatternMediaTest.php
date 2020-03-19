@@ -69,7 +69,7 @@ class PatternMediaTest extends KernelTestBase {
    */
   public function testMediaPatternIds() {
     $props = [
-      'attributes' => new Attribute(['class' => 'su-media', 'id' => 'media']),
+      'attributes' => new Attribute(['class' => 'su-media', 'id' => 'su-media']),
       'media_caption' => 'You must do the things you think you cannot do.',
       'media_custom' => 'Nothing to see here. Please move along',
     ];
