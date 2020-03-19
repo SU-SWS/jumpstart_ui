@@ -7,7 +7,6 @@
  * Long description.
  */
 
-use Drupal\Component\Utility\Html;
 use Drupal\Core\Url;
 use Drupal\ui_patterns\UiPatterns;
 
