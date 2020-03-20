@@ -1,4 +1,11 @@
 # Jumpstart UI
+8.x-1.5
+-------------------------------------------------------------------------------
+_Release Date: 2020-03-20_
+
+- Updated layouts & kernel tests for all the layouts (#44)
+- D8CORE-1504: Ensured unique ids in the media template (#46)
+
 
 8.x-1.4
 --------------------------------------------------------------------------------
