@@ -11,18 +11,33 @@ use Drupal\Core\Form\FormStateInterface;
  */
 class JumpstartUiTwoColumnLayout extends JumpstartUiLayouts {
 
+  /**
+   * Equal two columns.
+   */
   const EQUAL = 'equal';
 
+  /**
+   * Larger left column.
+   */
   const LEFT = 'left';
 
+  /**
+   * Larger right column.
+   */
   const RIGHT = 'right';
 
+  /**
+   * {@inheritDoc}
+   */
   public function defaultConfiguration() {
     $config = parent::defaultConfiguration();
     $config['orientation'] = self::RIGHT;
     return $config;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
     $form['orientation'] = [
@@ -38,6 +53,9 @@ class JumpstartUiTwoColumnLayout extends JumpstartUiLayouts {
     return $form;
   }
 
+  /**
+   * {@inheritDoc}
+   */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     parent::submitConfigurationForm($form, $form_state);
     $this->configuration['orientation'] = $form_state->getValue('orientation');
