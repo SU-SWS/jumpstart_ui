@@ -1,6 +1,6 @@
 <?php
 
-namespace Drupal\jumpstart_ui;
+namespace Drupal\jumpstart_ui\Layouts;
 
 use Drupal\Core\Form\FormStateInterface;
 use Drupal\Core\Layout\LayoutDefault;
