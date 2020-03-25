@@ -1,10 +1,10 @@
-{% if settings.orientation == 'right' %}
-  {% set right_class = 'flex-lg-9-of-12' %}
-  {% set left_class = 'flex-lg-3-of-12' %}
-{% elseif settings.orientation == 'left' %}
+{% set right_class = 'flex-lg-9-of-12' %}
+{% set left_class = 'flex-lg-3-of-12' %}
+
+{% if settings.orientation == 'left' %}
   {% set right_class = 'flex-lg-3-of-12' %}
   {% set left_class = 'flex-lg-9-of-12' %}
-{% else %}
+{% elseif settings.orientation == 'equal' %}
   {% set right_class = 'flex-lg-6-of-12' %}
   {% set left_class = 'flex-lg-6-of-12' %}
 {% endif %}
