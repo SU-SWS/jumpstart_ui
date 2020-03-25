@@ -1,17 +1,17 @@
 <?php
 
-namespace Drupal\Tests\jumpstart_ui\Unit;
+namespace Drupal\Tests\jumpstart_ui\Unit\Layouts;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Form\FormState;
-use Drupal\jumpstart_ui\JumpstartUiLayouts;
+use Drupal\jumpstart_ui\Layouts\JumpstartUiLayouts;
 use Drupal\Tests\UnitTestCase;
 
 /**
  * Class JumpstartUiLayoutsTest.
  *
  * @group jumpstart_ui
- * @coversDefaultClass \Drupal\jumpstart_ui\JumpstartUiLayouts
+ * @coversDefaultClass \Drupal\jumpstart_ui\Layouts\JumpstartUiLayouts
  */
 class JumpstartUiLayoutsTest extends UnitTestCase {
 
