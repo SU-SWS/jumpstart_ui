@@ -35,7 +35,7 @@ function jumpstart_ui_page_attachments(array &$page) {
 function jumpstart_ui_preprocess(&$variables, $hook) {
 
   // Only want pattern contexts.
-  if (isset($variables['context']) && !($variables['context'] instanceof PatternContext)) {
+  if (!(isset($variables['context']) && $variables['context'] instanceof PatternContext)) {
     return;
   }
 
