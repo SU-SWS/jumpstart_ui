@@ -35,7 +35,7 @@ function jumpstart_ui_page_attachments(array &$page) {
 function jumpstart_ui_preprocess(&$variables, $hook) {
 
   // Only want pattern contexts.
-  if (!isset($variables['context']) || !($variables['context'] instanceof PatternContext)) {
+  if (!(isset($variables['context']) && $variables['context'] instanceof PatternContext)) {
     return;
   }
 
@@ -69,7 +69,8 @@ function jumpstart_ui_preprocess_patterns_overview_page(&$variables) {
  * Implements hook_preprocess_HOOK().
  */
 function jumpstart_ui_preprocess_pattern_localfooter(&$variables) {
-  if (!empty($variables['weblogin_text']) && \Drupal::currentUser()->isAnonymous()) {
+  if (!empty($variables['weblogin_text']) && \Drupal::currentUser()
+      ->isAnonymous()) {
     if (\Drupal::moduleHandler()->moduleExists('simplesamlphp_auth')) {
       $route = Url::fromRoute('simplesamlphp_auth.saml_login');
     }
