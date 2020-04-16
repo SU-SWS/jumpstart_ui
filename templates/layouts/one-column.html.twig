@@ -1,4 +1,4 @@
-{% if 'centered-container' in settings.centered|render %}
+{% if 'centered-container' in settings.centered|render and region_attributes.main is iterable %}
   {% set region_attributes_main = region_attributes.main.addClass('flex-12-of-12') %}
   {% set region_attributes = region_attributes|merge({'main': region_attributes_main}) %}
 {% endif %}
