@@ -1,5 +1,16 @@
 # Jumpstart UI
 
+8.x-1.5
+--------------------------------------------------------------------------------
+_Release Date: 2020-04-16_
+
+- Updated layouts & Kernel Tests For All The Layouts (#44)
+- DCORE-1504: Ensure unique id's in the media template. (#46)
+- CSD-19 Added configurable orientation to the two column layout. (#48)
+- D8CORE-1644: Dev branch workflow. Created master branch, changed the release workflow, added automated tagging
+- Fixed prepocess hook logic to prevent unwanted alters (#50)
+- D8CORE-1847 Decode html entities (#51)
+
 8.x-1.4
 --------------------------------------------------------------------------------
 _Release Date: 2020-02-27_
