@@ -32,6 +32,7 @@ jumpstart_ui_two_column:
 # Three Column
 jumpstart_ui_three_column:
   <<: *defaults
+  class: '\Drupal\jumpstart_ui\Layouts\JumpstartUiThreeColumnLayout'
   label: Stanford Three Column
   template: three-column
   icon_map:
