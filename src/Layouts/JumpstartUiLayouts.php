@@ -24,7 +24,7 @@ class JumpstartUiLayouts extends LayoutDefault implements PluginFormInterface {
    * {@inheritDoc}
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
-    $form = [];
+    $form = parent::buildConfigurationForm($form, $form_state);
 
     // Extra CSS classes.
     $form['extra_classes'] = [
@@ -69,6 +69,7 @@ class JumpstartUiLayouts extends LayoutDefault implements PluginFormInterface {
    * {@inheritDoc}
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
+    parent::submitConfigurationForm($form, $form_state);
     $classes = explode(' ', $form_state->getValue('extra_classes'));
     $classes = array_map([
       '\Drupal\Component\Utility\Html',

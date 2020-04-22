@@ -16,6 +16,7 @@
     "drupal/core": "^8.8",
     "drupal/components": "~1.0",
     "drupal/ds": "~3.3",
-    "drupal/ui_patterns": "~1.0"
+    "drupal/ui_patterns": "~1.0",
+    "drupal/ui_patterns_layout_builder": "dev-8.x-1.x#e893ab24de2397c31f15aa480a3d4bf9a69cedda"
   }
 }
