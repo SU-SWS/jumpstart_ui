@@ -55,7 +55,7 @@ class OneColLayoutTest extends KernelTestBase {
     $twig =  \Drupal::service('twig');
     $template = drupal_get_path('module', 'jumpstart_ui') . '/templates/layouts/one-column.html.twig';
     $props = $this->getProps();
-    $props['columns'] = 'flex-6-of-12';
+    $props['settings']['columns'] = 'flex-6-of-12';
     $this->setRawContent((string) twig_render_template($template, $props));
     $this->assertText("Somebody once told me php unit is gonna rule me");
     $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
