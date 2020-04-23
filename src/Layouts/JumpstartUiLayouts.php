@@ -47,7 +47,7 @@ class JumpstartUiLayouts extends LayoutDefault implements PluginFormInterface {
       '#title' => $this->t('Maximum Width'),
       '#description' => $this->t('Set the maximum width of the container.'),
       '#options' => [
-        'default' => $this->t('default'),
+        'default' => $this->t('Default'),
         'flex-3-of-12' => $this->t('3 Columns'),
         'flex-4-of-12' => $this->t('4 Columns'),
         'flex-5-of-12' => $this->t('5 Columns'),
