@@ -50,6 +50,22 @@ class OneColLayoutTest extends KernelTestBase {
   /**
    * Layout should render when values are passed..
    */
+  public function testOneColLayoutColumnProps() {
+    // Boot twig environment.
+    $twig =  \Drupal::service('twig');
+    $template = drupal_get_path('module', 'jumpstart_ui') . '/templates/layouts/one-column.html.twig';
+    $props = $this->getProps();
+    $props['settings']['columns'] = 'flex-6-of-12';
+    $this->setRawContent((string) twig_render_template($template, $props));
+    $this->assertText("Somebody once told me php unit is gonna rule me");
+    $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertContains("flex-6-of-12", $this->getRawContent());
+    $this->assertContains('jumpstart-ui--one-column', $this->getRawContent());
+  }
+
+  /**
+   * Layout should render when values are passed..
+   */
   public function testOneColLayoutNoProps() {
     // Boot twig environment.
     $twig =  \Drupal::service('twig');
@@ -89,6 +105,7 @@ class OneColLayoutTest extends KernelTestBase {
       'settings' => [
         'extra_classes' => "boy-is-this-a-neat-class",
         'centered' => 'centered-container',
+        'columns' => 'default'
       ],
       'attributes' => new Attribute(['class' => 'wrapper-test']),
     ];
