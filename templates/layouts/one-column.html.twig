@@ -7,11 +7,11 @@
 {# Add a few classes to the outer wrapper by default. #}
 {% set attributes = attributes.addClass('jumpstart-ui--one-column', settings.centered, settings.extra_classes) %}
 
-{# Pull out the main attributes so they are easier to work with #}
+{# Pull out the main attributes so they are easier to work with. #}
 {% set main_attributes = region_attributes.main %}
 {% set main_attributes = main_attributes.addClass('main-region') %}
 
-{# Configuraiton for the main attributes #}
+{# Configuration for the main attributes. #}
 {% if 'centered-container' in settings.centered|render and main_attributes is iterable %}
   {% set main_attributes = main_attributes.addClass('flex-12-of-12') %}
 {% endif %}
