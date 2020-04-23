@@ -78,7 +78,7 @@ class JumpstartUiLayouts extends LayoutDefault implements PluginFormInterface {
     array_walk($classes, 'trim');
     $this->configuration['extra_classes'] = implode(' ', array_filter($classes));
     $this->configuration['centered'] = $form_state->getValue('centered') ? 'centered-container' : NULL;
-    $this->configuration['columns'] = $form_state->getValue('columns') ?? 'default';
+    $this->configuration['columns'] = $form_state->getValue('columns');
   }
 
 }
