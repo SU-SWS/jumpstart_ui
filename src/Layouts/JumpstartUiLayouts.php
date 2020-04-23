@@ -59,7 +59,7 @@ class JumpstartUiLayouts extends LayoutDefault implements PluginFormInterface {
         'flex-11-of-12' => $this->t('11 Columns'),
         'flex-12-of-12' => $this->t('12 Columns'),
       ],
-      '#default_value' => $this->configuration['columns'] ?: 'default',
+      '#default_value' => $this->configuration['columns'] ?? 'default',
     ];
 
     return $form;
@@ -78,7 +78,7 @@ class JumpstartUiLayouts extends LayoutDefault implements PluginFormInterface {
     array_walk($classes, 'trim');
     $this->configuration['extra_classes'] = implode(' ', array_filter($classes));
     $this->configuration['centered'] = $form_state->getValue('centered') ? 'centered-container' : NULL;
-    $this->configuration['columns'] = $form_state->getValue('columns') ?: 'default';
+    $this->configuration['columns'] = $form_state->getValue('columns') ?? 'default';
   }
 
 }
