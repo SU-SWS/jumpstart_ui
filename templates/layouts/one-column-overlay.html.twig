@@ -1,0 +1,13 @@
+{% if 'centered-container' in settings.centered|render and region_attributes.main is iterable %}
+  {% set region_attributes_main = region_attributes.main.addClass('flex-12-of-12') %}
+  {% set region_attributes = region_attributes|merge({'main': region_attributes_main}) %}
+{% endif %}
+<div{{ attributes.addClass('jumpstart-ui--one-column', settings.centered, settings.extra_classes) }}>
+  <div {{ region_attributes.main.addClass('main-region') }}>
+    {{ content.main }}
+  </div>
+
+  <div {{ region_attributes.overlay.addClass('overlay-region') }}>
+    {{ content.overlay }}
+  </div>
+</div>
