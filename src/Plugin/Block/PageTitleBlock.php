@@ -4,6 +4,7 @@ namespace Drupal\jumpstart_ui\Plugin\Block;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Block\BlockBase;
+use Drupal\Core\Form\FormStateInterface;
 
 /**
  * Provides a block that outputs an h1 tag.
@@ -25,7 +26,7 @@ class PageTitleBlock extends BlockBase {
 
     $form['page_title'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('The page'),
+      '#title' => $this->t('The page title'),
       '#description' => $this->t('Plain text only in this field as it will be wrapped with an h1 tag.'),
       '#default_value' => isset($config['page_title']) ? $config['page_title'] : '',
     ];
@@ -52,12 +53,8 @@ class PageTitleBlock extends BlockBase {
       'pagetitle' => [
         '#title' => $this->t('Page Title'),
         '#markup' => $config['page_title'] ?? $this->t("No page title provided"),
-        '#prefix' => "<h1>",
+        '#prefix' => "<h1 id=\"" . $id . "\" class=\"page-title\">",
         '#suffix' => "</h1>",
-        '#attributes' => [
-          'id' => $id,
-          'class' => ['page-title'],
-        ],
       ],
     ];
   }
