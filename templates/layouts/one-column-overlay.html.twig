@@ -2,12 +2,23 @@
   {% set region_attributes_main = region_attributes.main.addClass('flex-12-of-12') %}
   {% set region_attributes = region_attributes|merge({'main': region_attributes_main}) %}
 {% endif %}
-<div{{ attributes.addClass('jumpstart-ui--one-column', settings.centered, settings.extra_classes) }}>
-  <div {{ region_attributes.main.addClass('main-region') }}>
-    {{ content.main }}
-  </div>
 
-  <div {{ region_attributes.overlay.addClass('overlay-region') }}>
-    {{ content.overlay }}
+{% if layout_builder_admin %}
+  <div{{ attributes.addClass('jumpstart-ui--one-column', settings.centered, settings.extra_classes) }}>
+    <div {{ region_attributes.main.addClass('main-region') }}>
+      <div>{{ 'Background Image'|t }}</div>
+      {{ content.main }}
+    </div>
+
+    <div {{ region_attributes.overlay.addClass('overlay-region') }}>
+      <div>{{ 'Overlaying Contents'|t }}</div>
+      {{ content.overlay }}
+    </div>
   </div>
-</div>
+{% else %}
+  {% set hero_body = content.overlay %}
+  {% set hero_image = content.main %}
+  {% include "@decanter/components/hero/hero.twig" %}
+{% endif %}
+
+
