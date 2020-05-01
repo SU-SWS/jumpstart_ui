@@ -78,9 +78,13 @@ class PageTitleBlock extends BlockBase {
     return [
       'pagetitle' => [
         '#title' => $this->t('Page Title'),
-        '#markup' => $config['page_title'] ?? $this->t("No page title provided"),
-        '#prefix' => "<" . $config['wrapper'] . " id=\"" . $id . "\" class=\"page-title\">",
-        '#suffix' => "</" . $config['wrapper'] . ">",
+        '#type' => 'html_tag',
+        '#tag' => $config['wrapper'],
+        '#value' => $config['page_title'] ?? $this->t("No page title provided"),
+        '#attributes' => [
+          'id' => $id,
+          'class' => 'page-title',
+        ]
       ],
     ];
   }

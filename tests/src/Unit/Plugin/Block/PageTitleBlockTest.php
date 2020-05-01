@@ -97,10 +97,12 @@ class PageTitleBlockTest extends UnitTestCase {
     $this->assertCount(1, $build);
     $this->assertArrayHasKey('pagetitle', $build);
     $this->assertTrue($build['pagetitle']['#title'] == 'Page Title');
-    $this->assertStringContainsString("<h2", $build['pagetitle']['#prefix']);
-    $this->assertStringContainsString("page-title", $build['pagetitle']['#prefix']);
-    $this->assertEquals("</h2>", $build['pagetitle']['#suffix']);
-    $this->assertEquals($build['pagetitle']['#markup'], $title_text);
+    $this->assertEquals("h2", $build['pagetitle']['#tag']);
+    $this->assertEquals($build['pagetitle']['#value'], $title_text);
+    $this->assertEquals($build['pagetitle']['#attributes'], [
+      'id' => 'page-title',
+      'class' => 'page-title',
+    ]);
   }
 
 }
