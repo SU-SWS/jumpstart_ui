@@ -5,21 +5,21 @@ namespace Drupal\Tests\jumpstart_ui\Unit\Plugin\Block;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Tests\UnitTestCase;
-use Drupal\jumpstart_ui\Plugin\Block\PageHeaderBlock;
+use Drupal\jumpstart_ui\Plugin\Block\PageHeadingBlock;
 use Drupal\Core\Form\FormState;
 
 /**
- * Class PageHeaderBlockTest
+ * Class PageHeadingBlockTest
  *
  * @package Drupal\Tests\jumpstart_ui\Unit\Plugin\Block
- * @covers \Drupal\jumpstart_ui\Plugin\Block\PageHeaderBlock
+ * @covers \Drupal\jumpstart_ui\Plugin\Block\PageHeadingBlock
  */
-class PageHeaderBlockTest extends UnitTestCase {
+class PageHeadingBlockTest extends UnitTestCase {
 
   /**
    * The block plugin.
    *
-   * @var \Drupal\jumpstart_ui\Plugin\Block\PageHeaderBlock
+   * @var \Drupal\jumpstart_ui\Plugin\Block\PageHeadingBlock
    */
   protected $block;
 
@@ -64,7 +64,7 @@ class PageHeaderBlockTest extends UnitTestCase {
 
     $this->account = $this->prophesize(AccountInterface::class);
 
-    $this->block = new PageHeaderBlock([], 'jumpstart_ui_page_header', ['provider' => 'jumpstart_ui']);
+    $this->block = new PageHeadingBlock([], 'jumpstart_ui_page_heading', ['provider' => 'jumpstart_ui']);
     \Drupal::setContainer($container);
   }
 
@@ -100,7 +100,7 @@ class PageHeaderBlockTest extends UnitTestCase {
     $this->assertEquals("h2", $build['heading']['#tag']);
     $this->assertEquals($build['heading']['#value'], $title_text);
     $this->assertEquals($build['heading']['#attributes'], [
-      'class' => 'header-h2',
+      'class' => 'heading-h2',
     ]);
   }
 
