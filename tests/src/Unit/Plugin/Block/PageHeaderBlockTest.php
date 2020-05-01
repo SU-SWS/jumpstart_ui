@@ -5,21 +5,21 @@ namespace Drupal\Tests\jumpstart_ui\Unit\Plugin\Block;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Session\AccountInterface;
 use Drupal\Tests\UnitTestCase;
-use Drupal\jumpstart_ui\Plugin\Block\PageTitleBlock;
+use Drupal\jumpstart_ui\Plugin\Block\PageHeaderBlock;
 use Drupal\Core\Form\FormState;
 
 /**
- * Class PageTitleBlockTest
+ * Class PageHeaderBlockTest
  *
  * @package Drupal\Tests\jumpstart_ui\Unit\Plugin\Block
- * @covers \Drupal\jumpstart_ui\Plugin\Block\PageTitleBlock
+ * @covers \Drupal\jumpstart_ui\Plugin\Block\PageHeaderBlock
  */
-class PageTitleBlockTest extends UnitTestCase {
+class PageHeaderBlockTest extends UnitTestCase {
 
   /**
    * The block plugin.
    *
-   * @var \Drupal\jumpstart_ui\Plugin\Block\PageTitleBlock
+   * @var \Drupal\jumpstart_ui\Plugin\Block\PageHeaderBlock
    */
   protected $block;
 
@@ -64,7 +64,7 @@ class PageTitleBlockTest extends UnitTestCase {
 
     $this->account = $this->prophesize(AccountInterface::class);
 
-    $this->block = new PageTitleBlock([], 'jumpstart_ui_page_title', ['provider' => 'jumpstart_ui']);
+    $this->block = new PageHeaderBlock([], 'jumpstart_ui_page_header', ['provider' => 'jumpstart_ui']);
     \Drupal::setContainer($container);
   }
 
@@ -85,23 +85,22 @@ class PageTitleBlockTest extends UnitTestCase {
     $form_state = new FormState();
     $form = $this->block->blockForm([], $form_state);
     $title_text = $this->getRandomGenerator()->string();
-    $form_state->setValue('page_title', $title_text);
+    $form_state->setValue('heading_text', $title_text);
     $form_state->setValue('wrapper', 'h2');
     $this->block->blockSubmit($form, $form_state);
     $new_config = $this->block->getConfiguration();
-    $this->assertEquals($title_text, $new_config['page_title']);
+    $this->assertEquals($title_text, $new_config['heading_text']);
     $this->assertEquals('h2', $new_config['wrapper']);
 
     // Test build.
     $build = $this->block->build();
     $this->assertCount(1, $build);
-    $this->assertArrayHasKey('pagetitle', $build);
-    $this->assertTrue($build['pagetitle']['#title'] == 'Page Title');
-    $this->assertEquals("h2", $build['pagetitle']['#tag']);
-    $this->assertEquals($build['pagetitle']['#value'], $title_text);
-    $this->assertEquals($build['pagetitle']['#attributes'], [
-      'id' => 'page-title',
-      'class' => 'page-title',
+    $this->assertArrayHasKey('heading', $build);
+    $this->assertTrue($build['heading']['#title'] == 'Heading');
+    $this->assertEquals("h2", $build['heading']['#tag']);
+    $this->assertEquals($build['heading']['#value'], $title_text);
+    $this->assertEquals($build['heading']['#attributes'], [
+      'class' => 'header-h2',
     ]);
   }
 

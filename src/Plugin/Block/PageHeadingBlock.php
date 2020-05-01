@@ -10,18 +10,18 @@ use Drupal\Core\Form\FormStateInterface;
  * Provides a block that outputs an h1 tag.
  *
  * @Block(
- *   id = "jumpstart_ui_page_title",
- *   admin_label = @Translation("Custom Heading Block"),
+ *   id = "jumpstart_ui_page_heading",
+ *   admin_label = @Translation("Heading Block"),
  * )
  */
-class PageTitleBlock extends BlockBase {
+class PageHeadingBlock extends BlockBase {
 
   /**
    * {@inheritdoc}
    */
   public function defaultConfiguration() {
     $config = parent::defaultConfiguration();
-    $config['page_title'] = "";
+    $config['heading_text'] = "";
     $config['wrapper'] = "h1";
     return $config;
   }
@@ -31,14 +31,13 @@ class PageTitleBlock extends BlockBase {
    */
   public function blockForm($form, FormStateInterface $form_state) {
     $form = parent::blockForm($form, $form_state);
-
     $config = $this->getConfiguration();
 
-    $form['page_title'] = [
+    $form['heading_text'] = [
       '#type' => 'textfield',
-      '#title' => $this->t('The page title'),
-      '#description' => $this->t('Plain text only in this field as it will be wrapped with an h1 tag.'),
-      '#default_value' => $config['page_title'] ?? '',
+      '#title' => $this->t('The heading text'),
+      '#description' => $this->t('Plain text only in this field as it will be wrapped with a header tag.'),
+      '#default_value' => $config['heading_text'] ?? '',
     ];
 
     $form['wrapper'] = [
@@ -65,7 +64,7 @@ class PageTitleBlock extends BlockBase {
   public function blockSubmit($form, FormStateInterface $form_state) {
     parent::blockSubmit($form, $form_state);
     $values = $form_state->getValues();
-    $this->configuration['page_title'] = $values['page_title'];
+    $this->configuration['heading_text'] = $values['heading_text'];
     $this->configuration['wrapper'] = $values['wrapper'];
   }
 
@@ -73,17 +72,15 @@ class PageTitleBlock extends BlockBase {
    * {@inheritdoc}
    */
   public function build() {
-    $id = Html::getUniqueId('page-title');
     $config = $this->getConfiguration();
     return [
-      'pagetitle' => [
-        '#title' => $this->t('Page Title'),
+      'heading' => [
+        '#title' => $this->t('Heading'),
         '#type' => 'html_tag',
         '#tag' => $config['wrapper'],
-        '#value' => $config['page_title'] ?? $this->t("No page title provided"),
+        '#value' => $config['heading_text'] ?? $this->t("No text provided"),
         '#attributes' => [
-          'id' => $id,
-          'class' => 'page-title',
+          'class' => 'heading-' . $config['wrapper'],
         ],
       ],
     ];
