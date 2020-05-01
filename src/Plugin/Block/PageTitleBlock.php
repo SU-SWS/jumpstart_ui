@@ -84,7 +84,7 @@ class PageTitleBlock extends BlockBase {
         '#attributes' => [
           'id' => $id,
           'class' => 'page-title',
-        ]
+        ],
       ],
     ];
   }
