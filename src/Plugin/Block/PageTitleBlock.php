@@ -21,6 +21,7 @@ class PageTitleBlock extends BlockBase {
    */
   public function defaultConfiguration() {
     $config = parent::defaultConfiguration();
+    $config['page_title'] = "";
     $config['wrapper'] = "h1";
     return $config;
   }
