@@ -74,7 +74,6 @@ class PageHeadingBlock extends BlockBase {
     $config = $this->getConfiguration();
     return [
       'heading' => [
-        '#title' => $this->t('Heading'),
         '#type' => 'html_tag',
         '#tag' => $config['wrapper'],
         '#value' => $config['heading_text'] ?? $this->t("No text provided"),

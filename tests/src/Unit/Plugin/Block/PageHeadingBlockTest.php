@@ -96,7 +96,6 @@ class PageHeadingBlockTest extends UnitTestCase {
     $build = $this->block->build();
     $this->assertCount(1, $build);
     $this->assertArrayHasKey('heading', $build);
-    $this->assertTrue($build['heading']['#title'] == 'Heading');
     $this->assertEquals("h2", $build['heading']['#tag']);
     $this->assertEquals($build['heading']['#value'], $title_text);
     $this->assertEquals($build['heading']['#attributes'], [
