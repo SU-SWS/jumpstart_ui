@@ -11,7 +11,7 @@ use Drupal\Core\Form\FormStateInterface;
  *
  * @Block(
  *   id = "jumpstart_ui_page_title",
- *   admin_label = @Translation("Custom Page Title"),
+ *   admin_label = @Translation("Custom Heading Block"),
  * )
  */
 class PageTitleBlock extends BlockBase {
