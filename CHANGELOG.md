@@ -1,5 +1,13 @@
 # Jumpstart UI
 
+8.x-1.6
+--------------------------------------------------------------------------------
+_Release Date: 2020-05-15_
+
+- Add custom page title block. (#55) (acc395e)
+- Added a one column with an overlay layout (#54) (ee6e0ba)
+- Add max columns for one column layout. (#53) (986302f)
+
 8.x-1.5
 --------------------------------------------------------------------------------
 _Release Date: 2020-04-16_

@@ -31,6 +31,7 @@ class JumpstartUiTwoColumnLayout extends JumpstartUiLayouts {
    */
   public function defaultConfiguration() {
     $config = parent::defaultConfiguration();
+    unset($config['columns']);
     $config['orientation'] = self::RIGHT;
     return $config;
   }
@@ -40,6 +41,7 @@ class JumpstartUiTwoColumnLayout extends JumpstartUiLayouts {
    */
   public function buildConfigurationForm(array $form, FormStateInterface $form_state) {
     $form = parent::buildConfigurationForm($form, $form_state);
+    unset($form['columns']);
     $form['orientation'] = [
       '#type' => 'select',
       '#title' => $this->t('Orientation'),
@@ -58,6 +60,7 @@ class JumpstartUiTwoColumnLayout extends JumpstartUiLayouts {
    */
   public function submitConfigurationForm(array &$form, FormStateInterface $form_state) {
     parent::submitConfigurationForm($form, $form_state);
+    unset($this->configuration['columns']);
     $this->configuration['orientation'] = $form_state->getValue('orientation');
   }
 

@@ -15,6 +15,19 @@ defaults: &defaults
 jumpstart_ui_one_column:
   <<: *defaults
 
+jumpstart_ui_one_column_overlay:
+  <<: *defaults
+  label: Stanford One Column with Overlay
+  regions:
+    main:
+      label: Main
+    overlay:
+      label: Overlay
+  template: one-column-overlay
+  icon_map:
+    - [main]
+    - [overlay]
+
 # Two Column
 jumpstart_ui_two_column:
   <<: *defaults
@@ -32,6 +45,7 @@ jumpstart_ui_two_column:
 # Three Column
 jumpstart_ui_three_column:
   <<: *defaults
+  class: '\Drupal\jumpstart_ui\Layouts\JumpstartUiThreeColumnLayout'
   label: Stanford Three Column
   template: three-column
   icon_map:
