@@ -5,12 +5,12 @@ package: Stanford
 version: 8.x-1.6
 core_version_requirement: '^8.8 || ^9'
 dependencies:
-    - 'components:components'
-    - 'drupal:block'
-    - 'drupal:breakpoint'
-    - 'ds:ds'
-    - 'ui_patterns:ui_patterns'
-    - 'ui_patterns_layouts:ui_patterns_layouts'
-    - 'ui_patterns_library:ui_patterns_library'
+  - components:components
+  - drupal:block
+  - drupal:breakpoint
+  - ds:ds
+  - ui_patterns:ui_patterns
+  - ui_patterns_layouts:ui_patterns_layouts
+  - ui_patterns_library:ui_patterns_library
 component-libraries:
     decanter: { paths: [dist/templates/decanter] }
