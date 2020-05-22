@@ -18,5 +18,6 @@
 {% else %}
   {% set hero_body = content.overlay %}
   {% set hero_image = content.main %}
+  {% set modifier_class = settings.extra_classes %}
   {% include "@decanter/components/hero/hero.twig" %}
 {% endif %}
