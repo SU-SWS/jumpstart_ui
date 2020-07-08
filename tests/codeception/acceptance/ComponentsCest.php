@@ -149,7 +149,7 @@ class ComponentsCest {
    * Link Component.
    */
   public function testLink(AcceptanceTester $I) {
-    $I->click('View Link as stand-alone');
+    $I->click('View Card as stand-alone');
 
     $I->canSee('card_image', '#content');
     $I->canSee('card_super_headline', '#content');
