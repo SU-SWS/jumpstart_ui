@@ -1,5 +1,5 @@
 lockup:
-  label: lockup
+  label: Lockup
   description: "A lockup with the Stanford wordmark logo and department/unit name. It is used in the header of a website and links to the homepage of the department/unit. When building a department lockup, besides the Stanford wordmark, the most obvious element should be the most granular relevant department."
   variants:
     a:
