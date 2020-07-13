@@ -61,7 +61,7 @@
 {% set attributes = attributes|without('class') %}
 
 {% if hero_link is empty and hero_button_link|render|striptags('<drupal-render-placeholder>') is not empty %}
-  {% set hero_link = hero_button_link %}
+  {% set hero_link = hero_button_link|render|striptags('<drupal-render-placeholder>')|convert_encoding('UTF-8', 'HTML-ENTITIES') %}
 {% endif %}
 
 {#

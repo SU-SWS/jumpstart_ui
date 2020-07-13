@@ -1,5 +1,12 @@
 # Jumpstart UI
 
+8.x-1.8
+--------------------------------------------------------------------------------
+_Release Date: 2020-07-13_
+
+- D8CORE-1538: Convert behat tests to codeception (#61) (218a01d)
+- D8CORE-1866 Convert special characters for the banner link pattern (#60) (b242ba6)
+
 8.x-1.7
 --------------------------------------------------------------------------------
 _Release Date: 2020-06-17_
