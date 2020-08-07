@@ -1,5 +1,13 @@
 # Jumpstart UI
 
+8.x-1.9
+--------------------------------------------------------------------------------
+_Release Date: 2020-08-07_
+
+- D8CORE-1726: making sure the h2 does not show as empty tags (#66) (9a9ea46)
+- D8CORE-2047: the organization in the address is not a heading. Reduce the font so it doesn't look like one. (#64) (7ee02e4)
+- Bump lodash from 4.17.15 to 4.17.19 (#63) (0d0c556)
+
 8.x-1.8
 --------------------------------------------------------------------------------
 _Release Date: 2020-07-13_
