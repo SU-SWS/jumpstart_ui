@@ -3,7 +3,9 @@
  #}
 {%- set card_cta_label = card_cta_label|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
 {%- set card_link = card_link|render|striptags('<drupal-render-placeholder>') -%}
-{% set card_headline = card_headline|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') %}
+{% if card_headline|render|striptags('<drupal-render-placeholder>')|trim is empty %}
+  {% set card_headline = null %}
+{% endif %}
 
 {#
   You are not allowed to have both action and button at the same time so remove the button

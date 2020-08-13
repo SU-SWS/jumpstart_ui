@@ -1,5 +1,11 @@
 # Jumpstart UI
 
+8.x-1.10
+--------------------------------------------------------------------------------
+_Release Date: 2020-08-13_
+
+- Corrected template markup that was stripping links in card pattern headline.
+
 8.x-1.9
 --------------------------------------------------------------------------------
 _Release Date: 2020-08-07_
