@@ -2,7 +2,7 @@
  # Sanitize some of the Drupalness in the picky fields.
  #}
 {%- set card_cta_label = card_cta_label|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
-{%- set card_link = card_link|render|striptags('<drupal-render-placeholder>') -%}
+{%- set card_link = card_link|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
 {% if card_headline|render|striptags('<drupal-render-placeholder>')|trim is empty %}
   {% set card_headline = null %}
 {% endif %}
