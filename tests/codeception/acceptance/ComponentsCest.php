@@ -87,7 +87,7 @@ class ComponentsCest {
     $I->canSeeNumberOfElements('#content .su-card--video', 1);
     $I->canSeeNumberOfElements('#content .su-card--embed', 1);
 
-    $href = $I->grabAttributeFrom('.su-card__link:first', 'href');
+    $href = $I->grabAttributeFrom('.su-card__link', 'href');
     $I->assertEquals($href, "https://stanford.edu/?a=b&c=d");
   }
 
