@@ -12,12 +12,6 @@ use Drupal\Core\Url;
 use Drupal\ui_patterns\UiPatterns;
 use Drupal\ui_patterns\Element\PatternContext;
 
-function jumpstart_ui_entity_view() {
-  \Drupal::messenger()->addStatus(t('This is a successful message.'), FALSE);
-  \Drupal::messenger()->addWarning(t('This is a warning message.'), FALSE);
-  \Drupal::messenger()->addError(t('This is an error message.'), FALSE);
-}
-
 /**
  * Implements hook_page_attachments().
  */

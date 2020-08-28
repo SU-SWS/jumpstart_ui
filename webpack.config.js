@@ -21,7 +21,7 @@ const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 // Paths ///////////////////////////////////////////////////////////////////////
 // /////////////////////////////////////////////////////////////////////////////
 
-const npmPackage = 'node_modules/';
+const npmPackage = path.resolve(__dirname, 'node_modules');
 const srcDir = path.resolve(__dirname, "lib");
 const distDir = path.resolve(__dirname, "dist");
 const srcSass = path.resolve(__dirname, "lib/scss");
@@ -70,12 +70,6 @@ var webpackConfig = {
     filename: "[name].js",
     path: path.resolve(__dirname, distJS)
   },
-  // Relative output paths for css assets.
-  resolve: {
-    alias: {
-      '~': path.resolve(npmPackage)
-    }
-  },
   // Additional module rules.
   module: {
     rules: [
@@ -115,15 +109,19 @@ var webpackConfig = {
           {
             loader: 'postcss-loader'
           },
+          // Resolve loader.
+          {
+            loader: 'resolve-url-loader'
+          },
           // SASS Loader. Add compile paths to include bourbon.
           {
             loader: 'sass-loader',
             options: {
-              implementation: require('sass'),
+              implementation: require('node-sass'),
               sourceMap: true,
               sassOptions: {
                 includePaths: [
-                  path.resolve(__dirname, npmPackage),
+                  path.resolve(__dirname, 'node_modules'),
                   path.resolve(__dirname, srcSass)
                 ],
                 lineNumbers: true,

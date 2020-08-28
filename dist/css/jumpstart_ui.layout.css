@@ -1,6 +1,1 @@
-.centered-content > div:first-child {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/*# sourceMappingURL=jumpstart_ui.layout.css.map*/
+.centered-content>div:first-child{margin-left:auto;margin-right:auto}
