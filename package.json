@@ -16,7 +16,7 @@
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
     "bourbon": "^5.1",
-    "caniuse-lite": "^1.0.30001121",
+    "caniuse-lite": "^1.0.30001122",
     "css-loader": "^2.1",
     "decanter": "git://github.com/SU-SWS/decanter.git#D8CORE-2490",
     "dot-prop": "^5.2.0",
