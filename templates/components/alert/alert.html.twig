@@ -38,4 +38,6 @@
   {%- endset -%}
 {% endif %}
 
+{% set alert_label = alert_label|render|striptags|trim %}
+
 {%- extends '@decanter/components/alert/alert.twig' -%}
