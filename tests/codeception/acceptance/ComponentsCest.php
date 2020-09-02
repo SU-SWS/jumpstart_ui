@@ -32,7 +32,6 @@ class ComponentsCest {
     $I->canSeeNumberOfElements('#content .su-alert--success', 1);
     $I->canSeeNumberOfElements('#content .su-alert--warning', 1);
     $I->canSeeNumberOfElements('#content .su-alert--info', 1);
-    $I->canSeeNumberOfElements('#content .su-alert--text-light', 1);
   }
 
   /**
