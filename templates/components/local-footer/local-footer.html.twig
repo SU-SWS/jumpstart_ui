@@ -63,7 +63,7 @@
 {# Use custom logo for the footer. #}
 {% block block_lockup %}
   {% if use_logo == "0" %}
-    {% embed "@decanter/components/lockup/lockup.twig" %}
+    {% embed "@decanter/components/lockup/lockup.twig" with lockup_options %}
 
       {# if the option was set to logo only. Remove the lines. #}
       {% if 'su-lockup--option-none' in lockup_option %}
