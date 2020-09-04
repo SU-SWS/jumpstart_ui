@@ -40,6 +40,9 @@
 
 {# Pass through custom lockup settings #}
 {%- set lockup_title = lockup_title|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
+{% if line1|render|striptags("<drupal-render-placeholder>") is empty %}
+  {% set line1 = lockup_title %}
+{% endif %}
 
 {# Pass through the custom lockup settings. #}
 {%- if custom_lockup -%}
@@ -57,8 +60,8 @@
 {%- endif -%}
 
 {# Use custom logo for the footer. #}
-{% if use_logo == "0" %}
-  {% block block_lockup %}
+{% block block_lockup %}
+  {% if use_logo == "0" %}
     {% embed "@decanter/components/lockup/lockup.twig" with lockup_options %}
 
       {# if the option was set to logo only. Remove the lines. #}
@@ -72,17 +75,19 @@
 
       {# Override cell 1 with the logo. #}
       {% block cell1 %}
-      <div class="su-lockup__logo-wrapper">
-        <img src="{{ site_logo }}" alt="{{ site_name }}" class="su-lockup__custom-logo" />
-        {% if line4 is not empty %}
-          <span class="su-lockup__line4">{{ line4 }}</span>
-        {% endif %}
-      </div>
-
+        <div class="su-lockup__logo-wrapper">
+          <img src="{{ site_logo }}" alt="{{ site_name }}" class="su-lockup__custom-logo" />
+          {% if line4 is not empty %}
+            <span class="su-lockup__line4">{{ line4 }}</span>
+          {% endif %}
+        </div>
       {% endblock %}
+
     {% endembed %}
-  {% endblock %}
-{% endif %}
+  {% else %}
+    {% include "@decanter/components/lockup/lockup.twig" with lockup_options only %}
+  {% endif %}
+{% endblock %}
 
 {# Finally call the parent template #}
 {%- extends "@decanter/components/local-footer/local-footer.twig" -%}
