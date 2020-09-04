@@ -38,6 +38,7 @@
   {%- endset -%}
 {% endif %}
 
-{% set alert_label = alert_label|render|striptags|trim %}
+{% set alert_label = alert_label|render|striptags("<drupal-placeholder>")|trim %}
+{% set alert_header = alert_header|render|striptags("<drupal-placeholder>")|trim %}
 
 {%- extends '@decanter/components/alert/alert.twig' -%}
