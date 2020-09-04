@@ -1,12 +1,17 @@
-{# Glue code for Decanter's component #}
+{#
+  Glue code for Decanter's component
+#}
+{# Macros for processing link fields into lists. #}
 {% import "@jumpstart_ui/macros/field-links-to-list.twig" as linklist %}
 {% import "@jumpstart_ui/macros/field-links-to-social-list.twig" as sociallist %}
 
+{# Sanitize the weblogin text. #}
 {%- set weblogin_text = weblogin_text|render|striptags('<drupal-render-placeholder>')|trim -%}
 {%- if weblogin_text is empty -%}
   {%- set weblogin_url = '' -%}
 {%- endif -%}
-{%- set lockup_title = lockup_title|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
+
+{# Work with Drupal and format it for this template. #}
 {%- set signup_form_method = signup_form_method|render|striptags('<drupal-render-placeholder>')|trim -%}
 {%- set signup_form_action = signup_form_action|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
 {%- set signup_form_field_submit_value = signup_form_field_submit_value|render|striptags('<drupal-render-placeholder>')|trim -%}
@@ -17,17 +22,68 @@
 {%- set primary_links_header = primary_links_header|render|striptags('<drupal-render-placeholder><a>')|trim -%}
 {%- set secondary_links_header = secondary_links_header|render|striptags('<drupal-render-placeholder><a>')|trim -%}
 
-{% if attributes is not empty %}
-  {% set attributes = attributes.removeClass('su-local-footer') %}
-{% else %}
+{# Ensure attributes is not empty and remove extra css classes if it does #}
+{% if attributes is empty %}
   {% set attributes = create_attribute() %}
 {% endif %}
 
-{% if modifier_class is not empty %}
-  {% set attributes = attributes.addClass(modifier_class) %}
-{% endif %}
-
-{% set modifier_class = attributes.class %}
+{# Pull the attribute classes out. #}
 {% set attributes = attributes|without('class') %}
 
+{# Pass through custom lockup settings #}
+{%- set lockup_title = lockup_title|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
+{% if line1|render|striptags("<drupal-render-placeholder>") is empty %}
+  {% set line1 = lockup_title %}
+{% endif %}
+
+{% if lockup_link|render|striptags('<drupal-render-placeholder')|trim is empty %}
+  {% set lockup_link = url('<front>') %}
+{% endif %}
+
+{# Pass through the custom lockup settings. #}
+{%- if custom_lockup -%}
+  {%- set lockup_options =
+    {
+      "modifier_class": lockup_option,
+      "line1": line1,
+      "line2": line2,
+      "line3": line3,
+      "line4": line4,
+      "line5": line5,
+      "link": lockup_link,
+    }
+  -%}
+{%- endif -%}
+
+{# Use custom logo for the footer. #}
+{% block block_lockup %}
+  {% if use_logo == "0" %}
+    {% embed "@decanter/components/lockup/lockup.twig" with lockup_options %}
+
+      {# if the option was set to logo only. Remove the lines. #}
+      {% if 'su-lockup--option-none' in lockup_option %}
+        {% set line1 = '' %}
+        {% set line2 = '' %}
+        {% set line3 = '' %}
+        {% set line4 = '' %}
+        {% set line5 = '' %}
+      {% endif %}
+
+      {# Override cell 1 with the logo. #}
+      {% block cell1 %}
+        <div class="su-lockup__logo-wrapper">
+          <img src="{{ site_logo }}" alt="{{ line1 }}" class="su-lockup__custom-logo" />
+          {% if line4 is not empty %}
+            <span class="su-lockup__line4">{{ line4 }}</span>
+          {% endif %}
+        </div>
+      {% endblock %}
+
+    {% endembed %}
+  {% else %}
+    {% include "@decanter/components/lockup/lockup.twig" with lockup_options only %}
+  {% endif %}
+{% endblock %}
+
+{# Finally call the parent template #}
 {%- extends "@decanter/components/local-footer/local-footer.twig" -%}
