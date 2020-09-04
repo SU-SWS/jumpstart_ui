@@ -25,17 +25,12 @@
 {# Ensure attributes is not empty and remove extra css classes if it does #}
 {% if attributes is not empty %}
   {% set attributes = attributes.removeClass('su-local-footer') %}
+  {% set attributes = attributes.removeClass(lockup_option) %}
 {% else %}
   {% set attributes = create_attribute() %}
 {% endif %}
 
-{# Combine the modifier classes with the attribute classes. #}
-{% if modifier_class is not empty %}
-  {% set attributes = attributes.addClass(modifier_class) %}
-{% endif %}
-
-{# Pull the attribute classes out and put them into the modifier variable. #}
-{% set modifier_class = attributes.class %}
+{# Pull the attribute classes out. #}
 {% set attributes = attributes|without('class') %}
 
 {# Pass through custom lockup settings #}
@@ -44,12 +39,15 @@
   {% set line1 = lockup_title %}
 {% endif %}
 
+{% if lockup_link|render|striptags('<drupal-render-placeholder')|trim is empty %}
+  {% set lockup_link = url('<front>') %}
+{% endif %}
+
 {# Pass through the custom lockup settings. #}
 {%- if custom_lockup -%}
-  {% set modifier_class = lockup_option %}
   {%- set lockup_options =
     {
-      "modifier_class": modifer_class,
+      "modifier_class": lockup_option,
       "line1": line1,
       "line2": line2,
       "line3": line3,
