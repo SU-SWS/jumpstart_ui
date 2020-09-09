@@ -1,5 +1,15 @@
 # Jumpstart UI
 
+8.x-1.11
+--------------------------------------------------------------------------------
+_Release Date: 2020-09-09_
+
+- D8CORE-2376: Overrides local footer lockup (#73) (57f4543)
+- D8CORE-2490 D8CORE-1609: Global Elements (#72) (9abc078)
+- D8CORE-2534: URL encode link in card component. (#71) (64ddbe9)
+- D8CORE-2499 Updated composer license (#70) (a2f7a09)
+- CSD-000 Added jumpstart-ui column class (#69) (e2b63fd)
+
 8.x-1.10
 --------------------------------------------------------------------------------
 _Release Date: 2020-08-13_
