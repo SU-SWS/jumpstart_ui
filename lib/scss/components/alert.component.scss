@@ -4,3 +4,9 @@
 @import '../jumpstart_ui.config';
 @import 'decanter/core/src/scss/decanter-no-markup';
 @import 'decanter/core/src/scss/components/alert/index';
+
+.su-alert__text {
+  p {
+    @include margin(null null 0 null);
+  }
+}

@@ -21,8 +21,12 @@ class ComponentsCest {
   public function testAlert(AcceptanceTester $I) {
     $I->click('View Alert as stand-alone');
 
+    $I->canSee('alert_icon', '#content');
+    $I->canSee('alert_label', '#content');
     $I->canSee('alert_header', '#content');
     $I->canSee('alert_text', '#content');
+    $I->canSee('alert_dismiss', '#content');
+    $I->canSee('alert_footer', '#content');
 
     $I->canSeeNumberOfElements('#content .su-alert--error', 1);
     $I->canSeeNumberOfElements('#content .su-alert--success', 1);
@@ -86,6 +90,9 @@ class ComponentsCest {
     $I->canSeeNumberOfElements('#content .su-card--icon', 1);
     $I->canSeeNumberOfElements('#content .su-card--video', 1);
     $I->canSeeNumberOfElements('#content .su-card--embed', 1);
+
+    $href = $I->grabAttributeFrom('.su-card__link', 'href');
+    $I->assertEquals($href, "https://stanford.edu/?a=b&c=d");
   }
 
   /**
