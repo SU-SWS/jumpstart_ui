@@ -3,15 +3,16 @@
     <ul {{ with_url }}>
   {% endif %}
 
-  {# find the field name and start looping through the items. #}
-  {% set field_keys = field|keys %}
-  {% set field_info = field[field_keys[0]] %}
-  {% set field_items = field_info["#items"] %}
-
-  {% for item in field_items %}
-    <li {{ list_attributes }}>
-      <a href="{{ item.uri }}" {{ item.options }}>{{ item.title }}</a>
-    </li>
+  {# Loop through each of the fields that are available. #}
+  {% for field_key in field|keys %}
+    {% for delta, item in field[field_key] %}
+      {# If the key of the field is an integer, we can use that. #}
+      {% if delta matches '/^\\d+$/' %}
+        <li {{ list_attributes }}>
+          {{ item }}
+        </li>
+      {% endif %}
+    {% endfor %}
   {% endfor %}
 
   {% if with_url is not empty %}
