@@ -3,6 +3,7 @@
 namespace Drupal\Tests\jumpstart_ui\Unit\Plugin\TwigPlugin;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\Renderer;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Core\Session\AccountInterface;
@@ -34,7 +35,7 @@ class JumpstartUITwigTest extends UnitTestCase {
 
     $renderer = $this->createMock(RendererInterface::class);
     $renderer->method('render')->will($this->returnCallback(function($arg){
-      return $arg;
+      return $arg['#markup'] ?? $arg;
     }));
     $this->twiggery = new JumpstartUITwig($renderer);
 
@@ -75,6 +76,7 @@ class JumpstartUITwigTest extends UnitTestCase {
    */
   public function testsCleanFilter() {
     $markup = '<div><a><span><article><section>test</section></article></span></a>';
+    $markup = Markup::create($markup);
     $this->assertArrayEquals(['#markup' => 'test'], $this->twiggery->renderClean($markup));
 
     $markup = '<div><a><span><article><section>test</section></article></span></a>';

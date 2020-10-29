@@ -2,7 +2,9 @@
 
 namespace Drupal\jumpstart_ui\Plugin\TwigPlugin;
 
+use Drupal\Component\Render\MarkupInterface;
 use Drupal\Component\Utility\Html;
+use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
 
 /**
@@ -73,6 +75,10 @@ class JumpstartUITwig extends \Twig_Extension {
    *   Markup render array.
    */
   public function renderClean($elements, $tags = '<drupal-render-placeholder>') {
+    if ($elements instanceof Markup) {
+      $elements = ['#markup' => (string) $elements];
+    }
+
     $rendered = $this->renderer->render($elements);
     if (strpos($tags, '<drupal-render-placeholder>') === FALSE) {
       $tags .= '<drupal-render-placeholder>';
