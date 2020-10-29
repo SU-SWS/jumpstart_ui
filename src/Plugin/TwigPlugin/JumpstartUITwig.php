@@ -4,7 +4,6 @@ namespace Drupal\jumpstart_ui\Plugin\TwigPlugin;
 
 use Drupal\Component\Render\MarkupInterface;
 use Drupal\Component\Utility\Html;
-use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
 
 /**
@@ -13,9 +12,9 @@ use Drupal\Core\Render\RendererInterface;
 class JumpstartUITwig extends \Twig_Extension {
 
   /**
-   * @var \Drupal\Core\Render\RendererInterface
-   *
    * Renderer service.
+   *
+   * @var \Drupal\Core\Render\RendererInterface
    */
   protected $renderer;
 
@@ -75,7 +74,7 @@ class JumpstartUITwig extends \Twig_Extension {
    *   Markup render array.
    */
   public function renderClean($elements, $tags = '<drupal-render-placeholder>') {
-    if ($elements instanceof Markup) {
+    if ($elements instanceof MarkupInterface) {
       $elements = ['#markup' => (string) $elements];
     }
 
@@ -83,7 +82,7 @@ class JumpstartUITwig extends \Twig_Extension {
     if (strpos($tags, '<drupal-render-placeholder>') === FALSE) {
       $tags .= '<drupal-render-placeholder>';
     }
-    // Use a markup to flag it as "safe"
+    // Use a markup to flag it as "safe".
     $result = trim(strip_tags($rendered, $tags));
     return $result ? ['#markup' => $result] : NULL;
   }

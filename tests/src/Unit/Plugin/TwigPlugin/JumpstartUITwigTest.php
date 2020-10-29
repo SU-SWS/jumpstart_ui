@@ -4,9 +4,7 @@ namespace Drupal\Tests\jumpstart_ui\Unit\Plugin\TwigPlugin;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Drupal\Core\Render\Markup;
-use Drupal\Core\Render\Renderer;
 use Drupal\Core\Render\RendererInterface;
-use Drupal\Core\Session\AccountInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\jumpstart_ui\Plugin\TwigPlugin\JumpstartUITwig;
 
