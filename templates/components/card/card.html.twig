@@ -1,9 +1,9 @@
 {#
  # Sanitize some of the Drupalness in the picky fields.
  #}
-{%- set card_cta_label = card_cta_label|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
-{%- set card_link = card_link|render|striptags('<drupal-render-placeholder>')|trim|convert_encoding('UTF-8', 'HTML-ENTITIES') -%}
-{% if card_headline|render|striptags('<drupal-render-placeholder>')|trim is empty %}
+{%- set card_cta_label = card_cta_label|render_clean -%}
+{%- set card_link = card_link|render_clean -%}
+{% if card_headline|render_clean is empty %}
   {% set card_headline = null %}
 {% endif %}
 
@@ -38,4 +38,4 @@
 {% set modifier_class = attributes.class %}
 {% set attributes = attributes|without('class') %}
 
-{% extends "@decanter/components/card/card.twig" %}
+{#{% extends "@decanter/components/card/card.twig" %}#}

@@ -32,13 +32,13 @@
 {%- endif -%}
 
 {# Create the HTML for the Alert Icon #}
-{% if alert_icon|render|striptags("<drupal-placeholder>") is empty %}
+{% if alert_icon|render_clean is empty %}
   {%- set alert_icon -%}
     <i class="su-fas {{ fa_class }}"></i>
   {%- endset -%}
 {% endif %}
 
-{% set alert_label = alert_label|render|striptags("<drupal-placeholder>")|trim %}
-{% set alert_header = alert_header|render|striptags("<drupal-placeholder>")|trim %}
+{% set alert_label = alert_label|render_clean %}
+{% set alert_header = alert_header|render_clean %}
 
 {%- extends '@decanter/components/alert/alert.twig' -%}
