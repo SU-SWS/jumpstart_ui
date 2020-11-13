@@ -26,19 +26,19 @@
 {#
   Sanitize the Drupal
 #}
-{%- if hero_super_headline|render|striptags('<drupal-render-placeholder>') is empty -%}
+{%- if hero_super_headline|render_clean is empty -%}
   {%- set hero_super_headline = null -%}
 {%- endif -%}
-{%- if hero_headline|render|striptags('<drupal-render-placeholder>') is empty -%}
+{%- if hero_headline|render_clean is empty -%}
   {%- set hero_headline = null -%}
 {%- endif -%}
-{%- if hero_body|render|striptags('<drupal-render-placeholder>') is empty -%}
+{%- if hero_body|render_clean is empty -%}
   {%- set hero_body = null -%}
 {%- endif -%}
-{%- if hero_cta_label|render|striptags('<drupal-render-placeholder>') is empty -%}
+{%- if hero_cta_label|render_clean is empty -%}
   {%- set hero_cta_label = null -%}
 {%- endif -%}
-{%- if hero_button_label|render|striptags('<drupal-render-placeholder>') is empty -%}
+{%- if hero_button_label|render_clean is empty -%}
   {%- set hero_button_label = null -%}
 {%- endif -%}
 
@@ -60,8 +60,8 @@
 {% set modifier_class = attributes.class %}
 {% set attributes = attributes|without('class') %}
 
-{% if hero_link is empty and hero_button_link|render|striptags('<drupal-render-placeholder>') is not empty %}
-  {% set hero_link = hero_button_link|render|striptags('<drupal-render-placeholder>')|convert_encoding('UTF-8', 'HTML-ENTITIES') %}
+{% if hero_link is empty and hero_button_link|render_clean is not empty %}
+  {% set hero_link = hero_button_link|render_clean %}
 {% endif %}
 
 {#

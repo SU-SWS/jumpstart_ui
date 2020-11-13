@@ -1,4 +1,4 @@
-{%- set media_link = media_link|render|striptags('<drupal-render-placeholder>') -%}
+{%- set media_link = media_link|render_clean -%}
 {% if attributes is not empty %}
   {% set attributes = attributes.removeClass('su-media') %}
 {% else %}
