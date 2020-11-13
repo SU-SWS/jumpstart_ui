@@ -70,12 +70,18 @@ class JumpstartUITwig extends \Twig_Extension {
    * @param string $tags
    *   Optionally which tags to keep.
    *
-   * @return array|null
+   * @return mixed
    *   Markup render array.
    */
   public function renderClean($elements, $tags = '<drupal-render-placeholder>') {
+
     if ($elements instanceof MarkupInterface) {
       $elements = ['#markup' => (string) $elements];
+    }
+
+    // Renderer service only accepts arrays.
+    if (!is_array($elements)) {
+      return $elements;
     }
 
     $rendered = $this->renderer->render($elements);
