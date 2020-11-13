@@ -51,8 +51,8 @@ class JumpstartUITwigTest extends UnitTestCase {
 
     $def1 = $this->twiggery->getUniqueId();
     $def2 = $this->twiggery->getUniqueId();
-    $this->assertContains('jumpstart-ui-', $def1);
-    $this->assertContains('jumpstart-ui-', $def2);
+    $this->assertStringContainsString('jumpstart-ui-', $def1);
+    $this->assertStringContainsString('jumpstart-ui-', $def2);
     $this->assertNotEquals($def1, $def2);
   }
 

@@ -21,7 +21,7 @@ class ThreeColLayoutTest extends KernelTestBase {
    */
   public static $modules = ['system'];
 
-  
+
   /**
    * {@inheritdoc}
    */
@@ -44,9 +44,9 @@ class ThreeColLayoutTest extends KernelTestBase {
     $this->assertText("Somebody once told me php unit is gonna rule me");
     $this->assertText("This aint the most fun that Ive had");
     $this->assertText("Im looking for the right class to base my tests off of and I wanna go straight to bed");
-    $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
-    $this->assertContains("flex-lg-6-of-12", $this->getRawContent());
-    $this->assertContains('jumpstart-ui--three-column', $this->getRawContent());
+    $this->assertStringContainsString("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertStringContainsString("flex-lg-6-of-12", $this->getRawContent());
+    $this->assertStringContainsString('jumpstart-ui--three-column', $this->getRawContent());
   }
 
   /**

@@ -21,7 +21,7 @@ class TwoColLayoutTest extends KernelTestBase {
    */
   public static $modules = ['system'];
 
-  
+
   /**
    * {@inheritdoc}
    */
@@ -42,9 +42,9 @@ class TwoColLayoutTest extends KernelTestBase {
     $props = $this->getProps();
     $this->setRawContent((string) twig_render_template($template, $props));
     $this->assertText("Somebody once told me php unit is gonna rule me");
-    $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
-    $this->assertContains("flex-12-of-12", $this->getRawContent());
-    $this->assertContains('jumpstart-ui--two-column', $this->getRawContent());
+    $this->assertStringContainsString("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertStringContainsString("flex-12-of-12", $this->getRawContent());
+    $this->assertStringContainsString('jumpstart-ui--two-column', $this->getRawContent());
   }
 
   /**
@@ -72,9 +72,9 @@ class TwoColLayoutTest extends KernelTestBase {
     unset($props['region_attributes']);
     $this->setRawContent((string) twig_render_template($template, $props));
     $this->assertText("Somebody once told me php unit is gonna rule me");
-    $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertStringContainsString("boy-is-this-a-neat-class", $this->getRawContent());
     $this->assertNotContains("flex-12-of-12", $this->getRawContent());
-    $this->assertContains('jumpstart-ui--two-column', $this->getRawContent());
+    $this->assertStringContainsString('jumpstart-ui--two-column', $this->getRawContent());
   }
 
   /**
