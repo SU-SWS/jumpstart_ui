@@ -80,11 +80,8 @@ class JumpstartUITwig extends \Twig_Extension {
     }
 
     // Renderer service only accepts arrays.
-    if (!is_array($elements)) {
-      return $elements;
-    }
+    $rendered = is_array($elements) ? $this->renderer->render($elements) : $elements;
 
-    $rendered = $this->renderer->render($elements);
     if (strpos($tags, '<drupal-render-placeholder>') === FALSE) {
       $tags .= '<drupal-render-placeholder>';
     }
