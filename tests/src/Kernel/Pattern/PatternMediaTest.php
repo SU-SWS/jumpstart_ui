@@ -8,6 +8,8 @@ use Twig\TemplateWrapper;
 use Drupal\ui_patterns\Element\PatternContext;
 use Drupal\Component\Utility\Html;
 
+
+
 /**
  * Class PatternMediaTest.
  *
@@ -43,6 +45,8 @@ class PatternMediaTest extends KernelTestBase {
     parent::setUp();
     \Drupal::service('theme_installer')->install(['bartik']);
     $this->twig = \Drupal::service('twig');
+
+    require_once DRUPAL_ROOT . '/core/themes/engines/twig/twig.engine';
   }
 
   /**

@@ -6,6 +6,8 @@ use Drupal\KernelTests\KernelTestBase;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Drupal\Core\Template\Attribute;
+use Twig\Loader\FilesystemLoader;
+
 
 /**
  * Class ThreeColLayoutTest.
@@ -28,8 +30,9 @@ class ThreeColLayoutTest extends KernelTestBase {
   public function register(ContainerBuilder $container) {
     parent::register($container);
 
-    $container->setDefinition('twig_loader__file_system', new Definition('Twig_Loader_Filesystem', [[dirname(__FILE__, 5) . '/templates/layouts/']]))
+    $container->setDefinition('twig_loader__file_system', new Definition(FilesystemLoader::class, [[dirname(__FILE__, 5) . '/templates/layouts/']]))
       ->addTag('twig.loader');
+    require_once DRUPAL_ROOT . '/core/themes/engines/twig/twig.engine';
   }
 
   /**
