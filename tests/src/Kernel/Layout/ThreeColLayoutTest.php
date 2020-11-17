@@ -6,6 +6,8 @@ use Drupal\KernelTests\KernelTestBase;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Drupal\Core\Template\Attribute;
+use Twig\Loader\FilesystemLoader;
+
 
 /**
  * Class ThreeColLayoutTest.
@@ -21,15 +23,16 @@ class ThreeColLayoutTest extends KernelTestBase {
    */
   public static $modules = ['system'];
 
-  
+
   /**
    * {@inheritdoc}
    */
   public function register(ContainerBuilder $container) {
     parent::register($container);
 
-    $container->setDefinition('twig_loader__file_system', new Definition('Twig_Loader_Filesystem', [[dirname(__FILE__, 5) . '/templates/layouts/']]))
+    $container->setDefinition('twig_loader__file_system', new Definition(FilesystemLoader::class, [[dirname(__FILE__, 5) . '/templates/layouts/']]))
       ->addTag('twig.loader');
+    require_once DRUPAL_ROOT . '/core/themes/engines/twig/twig.engine';
   }
 
   /**
@@ -44,9 +47,9 @@ class ThreeColLayoutTest extends KernelTestBase {
     $this->assertText("Somebody once told me php unit is gonna rule me");
     $this->assertText("This aint the most fun that Ive had");
     $this->assertText("Im looking for the right class to base my tests off of and I wanna go straight to bed");
-    $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
-    $this->assertContains("flex-lg-6-of-12", $this->getRawContent());
-    $this->assertContains('jumpstart-ui--three-column', $this->getRawContent());
+    $this->assertStringContainsString("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertStringContainsString("flex-lg-6-of-12", $this->getRawContent());
+    $this->assertStringContainsString('jumpstart-ui--three-column', $this->getRawContent());
   }
 
   /**

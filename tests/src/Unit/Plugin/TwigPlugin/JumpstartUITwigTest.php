@@ -7,6 +7,8 @@ use Drupal\Core\Render\Markup;
 use Drupal\Core\Render\RendererInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\jumpstart_ui\Plugin\TwigPlugin\JumpstartUITwig;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /**
  * Class JumpstartUITwigTest
@@ -51,8 +53,8 @@ class JumpstartUITwigTest extends UnitTestCase {
 
     $def1 = $this->twiggery->getUniqueId();
     $def2 = $this->twiggery->getUniqueId();
-    $this->assertContains('jumpstart-ui-', $def1);
-    $this->assertContains('jumpstart-ui-', $def2);
+    $this->assertStringContainsString('jumpstart-ui-', $def1);
+    $this->assertStringContainsString('jumpstart-ui-', $def2);
     $this->assertNotEquals($def1, $def2);
   }
 
@@ -61,11 +63,11 @@ class JumpstartUITwigTest extends UnitTestCase {
    */
   public function testGetFunctions() {
     $functs = $this->twiggery->getFunctions();
-    $this->assertInstanceOf(\Twig_SimpleFunction::class, $functs[0]);
+    $this->assertInstanceOf(TwigFunction::class, $functs[0]);
     $this->assertEquals('getUniqueId', $functs[0]->getName());
 
     $filters = $this->twiggery->getFilters();
-    $this->assertInstanceOf(\Twig_SimpleFilter::class, $filters[0]);
+    $this->assertInstanceOf(TwigFilter::class, $filters[0]);
     $this->assertEquals('render_clean', $filters[0]->getName());
   }
 

@@ -6,6 +6,7 @@ use Drupal\KernelTests\KernelTestBase;
 use Drupal\Core\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Definition;
 use Drupal\Core\Template\Attribute;
+use Twig\Loader\FilesystemLoader;
 
 /**
  * Class OneColLayoutTest.
@@ -28,8 +29,10 @@ class OneColLayoutTest extends KernelTestBase {
   public function register(ContainerBuilder $container) {
     parent::register($container);
 
-    $container->setDefinition('twig_loader__file_system', new Definition('Twig_Loader_Filesystem', [[dirname(__FILE__, 5) . '/templates/layouts/']]))
+    $container->setDefinition('twig_loader__file_system', new Definition(FilesystemLoader::class, [[dirname(__FILE__, 5) . '/templates/layouts/']]))
       ->addTag('twig.loader');
+
+    require_once DRUPAL_ROOT . '/core/themes/engines/twig/twig.engine';
   }
 
   /**
@@ -42,9 +45,9 @@ class OneColLayoutTest extends KernelTestBase {
     $props = $this->getProps();
     $this->setRawContent((string) twig_render_template($template, $props));
     $this->assertText("Somebody once told me php unit is gonna rule me");
-    $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
-    $this->assertContains("flex-12-of-12", $this->getRawContent());
-    $this->assertContains('jumpstart-ui--one-column', $this->getRawContent());
+    $this->assertStringContainsString("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertStringContainsString("flex-12-of-12", $this->getRawContent());
+    $this->assertStringContainsString('jumpstart-ui--one-column', $this->getRawContent());
   }
 
   /**
@@ -58,9 +61,9 @@ class OneColLayoutTest extends KernelTestBase {
     $props['settings']['columns'] = 'flex-6-of-12';
     $this->setRawContent((string) twig_render_template($template, $props));
     $this->assertText("Somebody once told me php unit is gonna rule me");
-    $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
-    $this->assertContains("flex-6-of-12", $this->getRawContent());
-    $this->assertContains('jumpstart-ui--one-column', $this->getRawContent());
+    $this->assertStringContainsString("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertStringContainsString("flex-6-of-12", $this->getRawContent());
+    $this->assertStringContainsString('jumpstart-ui--one-column', $this->getRawContent());
   }
 
   /**
@@ -72,9 +75,9 @@ class OneColLayoutTest extends KernelTestBase {
     $template = drupal_get_path('module', 'jumpstart_ui') . '/templates/layouts/one-column.html.twig';
     $this->setRawContent((string) twig_render_template($template, []));
     $this->assertNotEmpty($this->getRawContent());
-    $this->assertNotContains("boy-is-this-a-neat-class", $this->getRawContent());
-    $this->assertNotContains("flex-12-of-12", $this->getRawContent());
-    $this->assertNotContains('jumpstart-ui--one-column', $this->getRawContent());
+    $this->assertStringNotContainsString("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertStringNotContainsString("flex-12-of-12", $this->getRawContent());
+    $this->assertStringNotContainsString('jumpstart-ui--one-column', $this->getRawContent());
   }
 
   /**
@@ -88,9 +91,9 @@ class OneColLayoutTest extends KernelTestBase {
     unset($props['region_attributes']);
     $this->setRawContent((string) twig_render_template($template, $props));
     $this->assertText("Somebody once told me php unit is gonna rule me");
-    $this->assertContains("boy-is-this-a-neat-class", $this->getRawContent());
-    $this->assertNotContains("flex-12-of-12", $this->getRawContent());
-    $this->assertContains('jumpstart-ui--one-column', $this->getRawContent());
+    $this->assertStringContainsString("boy-is-this-a-neat-class", $this->getRawContent());
+    $this->assertStringNotContainsString("flex-12-of-12", $this->getRawContent());
+    $this->assertStringContainsString('jumpstart-ui--one-column', $this->getRawContent());
   }
 
   /**

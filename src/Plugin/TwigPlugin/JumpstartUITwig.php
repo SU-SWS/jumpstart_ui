@@ -5,11 +5,14 @@ namespace Drupal\jumpstart_ui\Plugin\TwigPlugin;
 use Drupal\Component\Render\MarkupInterface;
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Render\RendererInterface;
+use Twig\Extension\AbstractExtension;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /**
  * Extend Drupal's Twig_Extension class.
  */
-class JumpstartUITwig extends \Twig_Extension {
+class JumpstartUITwig extends AbstractExtension {
 
   /**
    * Renderer service.
@@ -33,7 +36,7 @@ class JumpstartUITwig extends \Twig_Extension {
    */
   public function getFunctions(): array {
     return [
-      new \Twig_SimpleFunction('getUniqueId', [$this, 'getUniqueId']),
+      new TwigFunction('getUniqueId', [$this, 'getUniqueId']),
     ];
   }
 
@@ -42,7 +45,7 @@ class JumpstartUITwig extends \Twig_Extension {
    */
   public function getFilters(): array {
     return [
-      new \Twig_SimpleFilter('render_clean', [$this, 'renderClean']),
+      new TwigFilter('render_clean', [$this, 'renderClean']),
     ];
   }
 
