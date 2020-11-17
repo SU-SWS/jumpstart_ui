@@ -11,3 +11,15 @@
 // body {
 //   background-image: url("../../assets/img/test.jpg");
 // }
+
+.text-long {
+  .video {
+    @include aspect-ratio(16, 9, 'iframe');
+
+    iframe {
+      height: 100%;
+      min-height: unset;
+    }
+  }
+
+}
