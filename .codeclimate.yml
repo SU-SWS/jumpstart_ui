@@ -121,5 +121,6 @@ exclude_patterns:
 - "package.json"
 - "webpack.config.js"
 - "**.min.*"
+- "dist"
 - "spec/"
 - "postcss.config.js"
