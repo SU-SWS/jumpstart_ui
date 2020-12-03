@@ -13,8 +13,8 @@
 // }
 
 .text-long {
-  .video {
-    @include aspect-ratio(16, 9, 'iframe');
+  .media-entity-wrapper {
+    @include aspect-ratio(16, 9, '> div');
 
     iframe {
       height: 100%;

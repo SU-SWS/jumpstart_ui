@@ -4,7 +4,7 @@
 @import 'decanter/core/src/scss/components/card/index';
 
 .su-card {
-  > div {
+  .media-entity-wrapper {
     @include aspect-ratio(16, 9, '> div');
 
     iframe {
