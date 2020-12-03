@@ -4,7 +4,7 @@
 @import 'decanter/core/src/scss/components/media/index';
 
 .su-media {
-  > .media-entity-wrapper {
+  .media-entity-wrapper.video {
     @include aspect-ratio(16, 9, '> div');
 
     iframe {
