@@ -1,4 +1,17 @@
-{%- set media_link = media_link|render_clean -%}
+{#What I want:#}
+{#if all the medias are empty:#}
+{#{%- if (media_img_src is empty) or (media_audio_src is empty) or (media_audio_src is empty) -%}#}
+{#no link:#}
+{#{%- set media_link = false -%}#}
+{#if one is entered: {% else %}#}
+{#{%- set media_link = media_link|render_clean -%}#}
+
+{%- if (media_img_src is empty) -%}
+  {%- set media_link = false -%}
+{% else %}
+  {%- set media_link = media_link|render_clean -%}
+{% endif %}
+
 {% if attributes is not empty %}
   {% set attributes = attributes.removeClass('su-media') %}
 {% else %}
