@@ -1,5 +1,5 @@
 {%- if media_img_src is empty and
-  media_custom|render_clean('<img> <picture> <iframe>') is empty -%}
+  media_custom|render_clean('<img> <picture>') is empty -%}
   {%- set media_link = false -%}
 {% else %}
   {%- set media_link = media_link|render_clean -%}
