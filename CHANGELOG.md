@@ -1,5 +1,20 @@
 # Jumpstart UI
 
+8.x-1.13
+--------------------------------------------------------------------------------
+_Release Date: 2020-12-04_
+
+- D8CORE-2529: Fixing the media with link or no link. (#84) (8da65db)
+- apply aspect ratio only to videos (0531982)
+- Fixed the iframe aspect ratio styles to avoid conflicts (#83) (4688e89)
+- D8CORE-2105 Upgrade decanter to 6.2.0 (#82) (4cfdb62)
+- D8CORE-3042 Adjusted css for youtube videos in paragraph types (#81) (2193286)
+- Adjusted tests to pass on D9 (#80) (2b1378e)
+- phpunit void return annoation (30c5eb7)
+- resolved failing test (5ca4828)
+- Fixed breaking logic in render_clean twig filter (1829784)
+- D8CORE-000 Add filter to render and clean an array (#78) (e20d608)
+
 8.x-1.12
 --------------------------------------------------------------------------------
 _Release Date: 2020-09-24_

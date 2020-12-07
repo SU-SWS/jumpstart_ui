@@ -32,8 +32,8 @@ class OneColOverlayLayoutTest extends KernelTestBase {
       ],
     ]);
 
-    $this->assertContains('foo-bar.jpg', $rendering);
-    $this->assertContains('Overlay Text', $rendering);
+    $this->assertStringContainsString('foo-bar.jpg', $rendering);
+    $this->assertStringContainsString('Overlay Text', $rendering);
     $this->assertNotEmpty(preg_grep('/class="su-hero/', explode("\n", $rendering)));
     $this->assertNotEmpty(preg_grep('/class="su-hero__media/', explode("\n", $rendering)));
     $this->assertNotEmpty(preg_grep('/class="su-card/', explode("\n", $rendering)));

@@ -3,9 +3,12 @@
 namespace Drupal\Tests\jumpstart_ui\Unit\Plugin\TwigPlugin;
 
 use Drupal\Core\DependencyInjection\ContainerBuilder;
-use Drupal\Core\Session\AccountInterface;
+use Drupal\Core\Render\Markup;
+use Drupal\Core\Render\RendererInterface;
 use Drupal\Tests\UnitTestCase;
 use Drupal\jumpstart_ui\Plugin\TwigPlugin\JumpstartUITwig;
+use Twig\TwigFilter;
+use Twig\TwigFunction;
 
 /**
  * Class JumpstartUITwigTest
@@ -25,12 +28,16 @@ class JumpstartUITwigTest extends UnitTestCase {
   /**
    * {@inheritDoc}
    */
-  protected function setUp() {
+  protected function setUp(): void {
     parent::setUp();
     $container = new ContainerBuilder();
     $container->set('string_translation', $this->getStringTranslationStub());
 
-    $this->twiggery = new JumpstartUITwig();
+    $renderer = $this->createMock(RendererInterface::class);
+    $renderer->method('render')->will($this->returnCallback(function($arg){
+      return $arg['#markup'] ?? $arg;
+    }));
+    $this->twiggery = new JumpstartUITwig($renderer);
 
     \Drupal::setContainer($container);
   }
@@ -46,8 +53,8 @@ class JumpstartUITwigTest extends UnitTestCase {
 
     $def1 = $this->twiggery->getUniqueId();
     $def2 = $this->twiggery->getUniqueId();
-    $this->assertContains('jumpstart-ui-', $def1);
-    $this->assertContains('jumpstart-ui-', $def2);
+    $this->assertStringContainsString('jumpstart-ui-', $def1);
+    $this->assertStringContainsString('jumpstart-ui-', $def2);
     $this->assertNotEquals($def1, $def2);
   }
 
@@ -56,8 +63,24 @@ class JumpstartUITwigTest extends UnitTestCase {
    */
   public function testGetFunctions() {
     $functs = $this->twiggery->getFunctions();
-    $this->assertInstanceOf(\Twig_SimpleFunction::class, $functs[0]);
+    $this->assertInstanceOf(TwigFunction::class, $functs[0]);
     $this->assertEquals('getUniqueId', $functs[0]->getName());
+
+    $filters = $this->twiggery->getFilters();
+    $this->assertInstanceOf(TwigFilter::class, $filters[0]);
+    $this->assertEquals('render_clean', $filters[0]->getName());
+  }
+
+  /**
+   * Run the render_clean filter.
+   */
+  public function testsCleanFilter() {
+    $markup = '<div><a><span><article><section>test</section></article></span></a>';
+    $markup = Markup::create($markup);
+    $this->assertArrayEquals(['#markup' => 'test'], $this->twiggery->renderClean($markup));
+
+    $markup = '<div><a><span><article><section>test</section></article></span></a>';
+    $this->assertArrayEquals(['#markup' => '<span>test</span>'], $this->twiggery->renderClean($markup, '<span>'));
   }
 
 }

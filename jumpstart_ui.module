@@ -91,3 +91,11 @@ function jumpstart_ui_preprocess_layout(&$variables) {
     $variables['layout_builder_admin'] = TRUE;
   }
 }
+
+/**
+ * Implements hook_preprocess_HOOK().
+ */
+function jumpstart_ui_preprocess_media(&$variables) {
+  $variables['attributes']['class'][] = 'media-entity-wrapper';
+  $variables['attributes']['class'][] = $variables['elements']['#media']->bundle();
+}
