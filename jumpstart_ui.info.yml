@@ -13,5 +13,7 @@ dependencies:
   - ui_patterns_layouts:ui_patterns_layouts
   - ui_patterns_library:ui_patterns_library
 
-component-libraries:
-    decanter: { paths: [dist/templates/decanter] }
+components:
+  namespaces:
+    decanter: dist/templates/decanter
+
