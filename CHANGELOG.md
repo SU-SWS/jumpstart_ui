@@ -1,5 +1,13 @@
 # Jumpstart UI
 
+8.x-1.14
+--------------------------------------------------------------------------------
+_Release Date: 2021-03-05_
+
+- Update components namespace for latest components version (#88) (fbd8346)
+- D8CORE-3493 D8CORE-3513 Wysiwyg video style fixes (#89) (90f3780)
+- updated circleci tests (#86) (aaf850b)
+
 8.x-1.13
 --------------------------------------------------------------------------------
 _Release Date: 2020-12-04_
