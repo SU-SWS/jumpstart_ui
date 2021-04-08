@@ -23,9 +23,8 @@ class SkipNavAnchorBlock extends BlockBase {
     $id = Html::getUniqueId('main-content');
     return [
       'anchor' => [
-        '#title' => $this->t('Main Content'),
         '#type' => 'html_tag',
-        '#tag' => 'div',
+        '#tag' => 'h2',
         '#value' => $this->t('Main Content'),
         '#attributes' => [
           'name' => $id,
