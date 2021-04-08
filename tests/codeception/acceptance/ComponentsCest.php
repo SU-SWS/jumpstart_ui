@@ -279,4 +279,15 @@ class ComponentsCest {
     $I->canSee('alt', '#content');
   }
 
+  /**
+   * Skiplink Component.
+   */
+  public function testSkiplink(AcceptanceTester $I) {
+    $I->click('Skip to main content');
+
+    $I->canSee('href', '#main-content');
+
+    $I->canSeeNumberOfElements('#main-content .visually-hidden .focusable', 1);
+  }
+
 }

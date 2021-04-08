@@ -4,7 +4,6 @@ namespace Drupal\jumpstart_ui\Plugin\Block;
 
 use Drupal\Component\Utility\Html;
 use Drupal\Core\Block\BlockBase;
-use Drupal\Core\Url;
 
 /**
  * Provides a block with a hidden anchor.
