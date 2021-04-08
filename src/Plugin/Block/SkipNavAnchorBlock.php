@@ -24,8 +24,8 @@ class SkipNavAnchorBlock extends BlockBase {
     return [
       'anchor' => [
         '#type' => 'html_tag',
-        '#tag' => 'h2',
-        '#value' => $this->t('Main Content'),
+        '#tag' => 'div',
+        '#value' => $this->t('Main content start'),
         '#attributes' => [
           'name' => $id,
           'id' => $id,
