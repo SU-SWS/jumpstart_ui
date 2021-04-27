@@ -10,7 +10,7 @@ use Drupal\paragraphs\ParagraphInterface;
 use Drupal\paragraphs\ParagraphsBehaviorBase;
 
 /**
- * Class HeroParagraphBehavior.
+ * Class HeroPatternBehavior.
  *
  * @ParagraphsBehavior(
  *   id = "hero_pattern",
@@ -26,16 +26,22 @@ class HeroPatternBehavior extends ParagraphsBehaviorBase {
   public static function isApplicable(ParagraphsType $paragraphs_type) {
     $display_storage = \Drupal::entityTypeManager()
       ->getStorage('entity_view_display');
-    $display_mode_ids = $display_storage->getQuery()
+    $display_ids = $display_storage->getQuery()
       ->condition('id', "paragraph.{$paragraphs_type->id()}.", 'STARTS_WITH')
       ->execute();
-    if (empty($display_mode_ids)) {
+
+    // No displays exist for this paragraph for some reason, let's bail.
+    if (empty($display_ids)) {
       return FALSE;
     }
+
     /** @var \Drupal\Core\Entity\Display\EntityViewDisplayInterface $display */
-    foreach ($display_storage->loadMultiple($display_mode_ids) as $display) {
+    foreach ($display_storage->loadMultiple($display_ids) as $display) {
       if ($layout = $display->getThirdPartySetting('ds', 'layout')) {
         if (!empty($layout['id']) && $layout['id'] == 'pattern_hero') {
+          // If any of the displays for the given paragraph are configured to
+          // display as the hero pattern, this behavior applicable and can be
+          // enabled.
           return TRUE;
         }
       }
