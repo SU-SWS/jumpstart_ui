@@ -6,6 +6,7 @@
   "authors": [],
   "license": "GPL-2.0-or-later",
   "minimum-stability": "dev",
+  "prefer-stable": true,
   "repositories": [
     {
       "type": "composer",
@@ -17,5 +18,11 @@
     "drupal/components": "^2.0",
     "drupal/ds": "^3.3",
     "drupal/ui_patterns": "^1.0"
+  },
+  "require-dev": {
+    "drupal/paragraphs": "^1.12"
+  },
+  "config": {
+    "sort-packages": true
   }
 }
