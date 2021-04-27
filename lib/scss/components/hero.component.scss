@@ -14,3 +14,21 @@
     }
   }
 }
+
+
+.overlay-right {
+  .su-hero {
+    .su-hero__card {
+      @include grid-media("md") {
+        right: 45px;
+        left: unset;
+        margin-left: auto;
+      }
+
+      @include grid-media('xl') {
+        right: 48px;
+      }
+    }
+  }
+}
+
