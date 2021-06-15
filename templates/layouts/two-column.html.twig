@@ -21,12 +21,14 @@
 
   {% if content.left|render %}
     <div {{ region_attributes.left.addClass('left-region', left_class) }}>
+      <div name="secondary-navigation" id="secondary-navigation" tabindex="-1" class="visually-hidden focusable">{{ 'Secondary Navigation'|t }}</div>
       {{ content.left }}
     </div>
   {% endif %}
 
   {% if content.main|render %}
     <div {{ region_attributes.main.addClass('main-region') }}>
+      <div name="main-content" id="main-content" tabindex="-1" class="visually-hidden focusable">{{ 'Main content start'|t }}</div>
       {{ content.main }}
     </div>
   {% endif %}
