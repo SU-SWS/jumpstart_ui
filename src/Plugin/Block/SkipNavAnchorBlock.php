@@ -26,7 +26,6 @@ class SkipNavAnchorBlock extends BlockBase {
         '#tag' => 'div',
         '#value' => $this->t('Main content start'),
         '#attributes' => [
-          'name' => $id,
           'id' => $id,
           'tabindex' => '-1',
           'class' => ['visually-hidden', 'focusable'],
