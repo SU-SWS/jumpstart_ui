@@ -125,12 +125,12 @@
     {%- endif -%}
   </div>
 
+  {% if media_link %}
+    <span class="su-media__link">{{ media_link }}</span>
+  {% endif %}
+
   {# Optional caption #}
   {%- if media_caption -%}
     <figcaption class="su-media__caption">{{ media_caption }}</figcaption>
   {%- endif -%}
-
-  {% if media_link %}
-    <span class="su-media__link">{{ media_link }}</span>
-  {% endif %}
 </figure>
