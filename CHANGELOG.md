@@ -1,5 +1,13 @@
 # Jumpstart UI
 
+8.x-1.18
+--------------------------------------------------------------------------------
+_Release Date: 2021-07-09_
+
+- D8CORE-4362 Remove empty <ul> tag in local footer template (#108) (58b2cf2)
+- D8CORE-4194 Use a regular link markup and stretch it over the image (#101) (8e0b21c)
+- D8CORE-4378: removing the name attribute from the skip to main target (#107) (b379062)
+
 8.x-1.16
 --------------------------------------------------------------------------------
 _Release Date: 2021-05-07_

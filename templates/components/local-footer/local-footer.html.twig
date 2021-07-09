@@ -22,6 +22,19 @@
 {%- set primary_links_header = primary_links_header|render_clean -%}
 {%- set secondary_links_header = secondary_links_header|render_clean -%}
 
+{% if action_links|render_clean('<ul> <li> <a>') is empty %}
+  {% set action_links = null %}
+{% endif %}
+{% if social_links|render_clean('<ul> <li> <a>') is empty %}
+  {% set social_links = null %}
+{% endif %}
+{% if primary_links|render_clean('<ul> <li> <a>') is empty %}
+  {% set primary_links = null %}
+{% endif %}
+{% if secondary_links|render_clean('<ul> <li> <a>') is empty %}
+  {% set secondary_links = null %}
+{% endif %}
+
 {# Ensure attributes is not empty and remove extra css classes if it does #}
 {% if attributes is empty %}
   {% set attributes = create_attribute() %}

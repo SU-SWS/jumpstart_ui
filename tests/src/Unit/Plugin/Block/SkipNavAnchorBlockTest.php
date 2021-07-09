@@ -84,12 +84,10 @@ class SkipNavAnchorBlockTest extends UnitTestCase {
     $this->assertArrayHasKey('anchor', $build);
     $this->assertTrue($build['anchor']['#type'] == 'html_tag');
     $this->assertTrue($build['anchor']['#value'] == 'Main content start');
-    $this->assertTrue($build['anchor']['#attributes']['name'] == 'main-content');
     $this->assertTrue($build['anchor']['#attributes']['id'] == 'main-content');
 
     // Build #2
     $build = $this->block->build();
-    $this->assertTrue($build['anchor']['#attributes']['name'] == 'main-content--2');
     $this->assertTrue($build['anchor']['#attributes']['id'] == 'main-content--2');
   }
 
