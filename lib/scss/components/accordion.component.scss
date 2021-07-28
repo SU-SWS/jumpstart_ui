@@ -5,7 +5,7 @@
 @import 'decanter/core/src/scss/decanter-no-markup';
 
 .jumpstart-accordion {
-  border: none;
+  border: 0;
   border-bottom: 1px solid #d2d3d4;
   border-top: 1px solid #d2d3d4;
 
@@ -45,7 +45,7 @@
 
   &[open] {
     summary {
-      &::after{
+      &::after {
         content: "\2212";
       }
     }
