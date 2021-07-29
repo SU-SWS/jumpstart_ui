@@ -50,6 +50,7 @@ var webpackConfig = {
     "jumpstart_ui":         path.resolve(__dirname, srcJS + "/jumpstart_ui.js"),
     "jumpstart_ui.base":    path.resolve(__dirname, srcSass + "/jumpstart_ui.base.scss"),
     "jumpstart_ui.layout":  path.resolve(__dirname, srcSass + "/jumpstart_ui.layout.scss"),
+    "accordion":            path.resolve(__dirname, srcSass + "/components/accordion.component.scss"),
     "alert":                path.resolve(__dirname, srcSass + "/components/alert.component.scss"),
     "brand-bar":            path.resolve(__dirname, srcSass + "/components/brand-bar.component.scss"),
     "button":               path.resolve(__dirname, srcSass + "/components/button.component.scss"),
