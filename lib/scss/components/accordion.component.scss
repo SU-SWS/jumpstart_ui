@@ -52,8 +52,9 @@
   }
 
   .accordion__title {
-    display: inline-block;
     @include responsive-spacing('padding', 0);
+    display: inline-block;
+    width: calc(100% - 70px);
   }
 
   .contents {
