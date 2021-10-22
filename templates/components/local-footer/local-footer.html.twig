@@ -73,6 +73,7 @@
   {% if use_logo == "0" %}
     {% embed "@decanter/components/lockup/lockup.twig" with lockup_options %}
 
+      {% set image_alt = line1 %}
       {# if the option was set to logo only. Remove the lines. #}
       {% if 'su-lockup--option-none' in lockup_option %}
         {% set line1 = '' %}
@@ -85,7 +86,7 @@
       {# Override cell 1 with the logo. #}
       {% block cell1 %}
         <div class="su-lockup__logo-wrapper">
-          <img src="{{ site_logo }}" alt="{{ line1 }}" class="su-lockup__custom-logo" />
+          <img src="{{ site_logo }}" alt="{{ image_alt }}" class="su-lockup__custom-logo" />
           {% if line4 is not empty %}
             <span class="su-lockup__line4">{{ line4 }}</span>
           {% endif %}
